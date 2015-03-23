@@ -1,0 +1,58 @@
+/*boxes fade in when you click on them*/
+.fadebox {
+    height: 100px;
+    width: 100px;
+    background-color: #4ECDC4;
+    border-radius: 5px;
+    display: inline-block;
+}
+/*the whole div is clickable*/
+a {
+	display: block;
+	padding: 6px;
+	color: blue;
+	opacity: 0.8;
+	background-color: grey;
+	width: 55px;
+}
+/*custmoized input box*/
+input {
+	border: 2px solid #888;
+	padding: 4px;
+	font-size: 1em;
+	background-color: #F8F8F8;
+}
+/*highlights input box when cursor inside*/
+input:focus {
+	border-color: #000;
+	background-color: #FFFE9D;
+	outline: none; /*gets rid of blue glow*/
+}
+/*hides controls unless hovering over message*/
+.message {
+	height: 75px;
+	width: 75px;
+	background-color: magenta;
+}
+.controls {
+	height: 50px;
+	width: 50px;
+	background-color: pink;
+}
+.message .controls { 
+	display: none; 
+}
+.message:hover .controls { 
+	display: block; 
+}
+/*floating window*/
+.floating-window {
+    z-index: 9999;
+    position: absolute;
+    width: 200px;
+	height: 200px;  
+    cursor: default;
+    -moz-box-shadow: 1px 1px 1px #888;
+    -webkit-box-shadow: 1px 1px 1px #888;
+    box-shadow: 1px 1px 1px #888;
+}

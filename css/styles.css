@@ -1,0 +1,22 @@
+/* @darkest: #323031; */
+/* @dark: #3D3B3C; */
+/* @slate: #7F7979; */
+/* @beige: #C1BDB3; */
+/* @lightest: #5F5B6B; */
+
+.header {
+  margin-top: 15rem;
+  margin-bottom: 9rem;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: #323031;
+}
