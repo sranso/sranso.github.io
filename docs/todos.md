@@ -1,10 +1,4 @@
 ## building
-- less
-- hbs
-- node
-- grunt
-- assemble
-
 - hosting
 
 ## content
