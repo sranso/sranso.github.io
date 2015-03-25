@@ -4,6 +4,10 @@
 /* @beige: #C1BDB3; */
 /* @lightest: #5F5B6B; */
 
+a {
+  text-decoration: none;
+}
+
 .header {
   margin-top: 15rem;
   margin-bottom: 9rem;
@@ -14,9 +18,7 @@
   text-align: center;
 }
 
-a {
-  text-decoration: none;
+.footer > a {
   margin-left: 2rem;
   margin-right: 2rem;
-  color: #323031;
 }
