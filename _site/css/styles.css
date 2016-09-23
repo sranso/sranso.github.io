@@ -1,5 +1,3 @@
-/* @darkest: #323031; */
-/* @dark: #3D3B3C; */
 /* @slate: #7F7979; */
 /* @beige: #C1BDB3; */
 /* @lightest: #5F5B6B; */
@@ -10,6 +8,10 @@ a {
 
 header {
   margin-top: 2rem;
+}
+
+h5 {
+  text-transform: uppercase;
 }
 
 #home, #posts, #post {
@@ -28,12 +30,17 @@ header {
 .header-link {
   text-transform: uppercase;
   color: #5F5B6B;
+  float: right;
+}
+
+.posts {
+  margin-left: 0.5rem;
 }
 
 .posts li {
   list-style-type: none;
-  padding-bottom: 1rem;
   margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: #ddd 1px solid;
 }
 
@@ -44,6 +51,11 @@ header {
 }
 
 .post-date {
+  margin-right: 1rem;
+}
+
+.post-tag {
+  color: #C1BDB3;
 }
 
 .post-ul {
