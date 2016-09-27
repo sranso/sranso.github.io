@@ -3,7 +3,7 @@
 <head>
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
-  <title>Game of Life in Elm</title>
+  <title>What does "runtime" mean?</title>
   <meta name="description" content="Sarah Ransohoff's personal website">
   <meta name="author" content="Sarah Ransohoff">
 
@@ -42,16 +42,28 @@
     <div id="content">
   <div id="post">
 
-  <h1>Game of Life in Elm</h1>
+  <h1>What does "runtime" mean?</h1>
 
   <p>
-    <a href="https://github.com/mariellefoster">Marielle Foster</a> and I built the <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> in <a href="http://elm-lang.org/">Elm</a> in an effort to learn Elm, learn a functional language, and pair with each other.
+  This morning I was going through the <a href="https://www.elm-tutorial.org/en/03-subs-cmds/02-commands.html">Elm docs</a> and I came across this line that caused me to pause:<br/>
   </p>
-  <p>
-    You can see it in action <a href="/green-rain">here</a> and view the source code <a href="https://github.com/sranso/green-rain">here.</a>
+  <p class="quote">
+  In Elm, commands (Cmd) are how we tell the runtime to execute things that involve side effects.
   </p>
 
-  <p class="post-footer">22 Sep 2016</p>
+  <p>
+  I understood "runtime" to be the length of time a program took to run, so this sentence confused me. After talking about it with some people from RC, we learned that, depending on the context, "runtime" can mean different things:
+  </p>
+  <ul>
+    <li>"the runtime"/"the runtime environment" = the programming language's own internal code that runs alongside the code you provided, the environment inside of which your program runs</li>
+    <li>"at runtime" = things that don't happen until your code is running, like the way JS and Python don't always show you syntax errors until you get into the bad function</li>
+    <li>"runtime" = amount of execution time taken</li>
+    <li>"runtime" (adjective) = specifies something that happens while your code is running in the browser, eg "runtime exception"</li>
+  </ul>
+
+  <p>Thanks to Juliano Solanho and Chris Ball for their help!</p>
+
+  <p class="post-footer">27 Sep 2016</p>
 
 </div>
 
@@ -61,9 +73,9 @@
   <h1>Related Posts</h1>
   <ul class="posts">
     
-      <li><span>27 Sep 2016</span> &raquo; <a href="/posts/2016/09/27/runtime.html">What does "runtime" mean?</a></li>
-    
       <li><span>23 Sep 2016</span> &raquo; <a href="/posts/2016/09/23/halfway-through.html">Halfway Through Recurse Center</a></li>
+    
+      <li><span>22 Sep 2016</span> &raquo; <a href="/projects/2016/09/22/game-of-life-elm.html">Game of Life in Elm</a></li>
     
       <li><span>06 Sep 2016</span> &raquo; <a href="/projects/2016/09/06/green-rain.html">Green Rain</a></li>
     

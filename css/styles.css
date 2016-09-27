@@ -1,6 +1,6 @@
-/* @slate: #7F7979; */
-/* @beige: #C1BDB3; */
-/* @lightest: #5F5B6B; */
+/* @posttag: #C1BDB3; */
+/* @header: #5F5B6B; */
+/* @lightgrey: #9f9f9f, rgb(159, 159, 159) */
 
 body {
   border-top: 1.4rem aliceblue solid;
@@ -73,9 +73,16 @@ h2 {
 }
 
 .post-footer {
-  color: #6e6e6e;
+  color: #9f9f9f;
   text-align: right;
   font-size: 1.2rem;
+}
+
+.quote {
+  color: #9f9f9f;
+  margin-left: 2rem;
+  padding-left: 1.5rem;
+  border-left: 0.5rem rgba(159, 159, 159, 0.2) solid;
 }
 
 footer {
