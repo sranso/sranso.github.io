@@ -1,0 +1,77 @@
+---
+layout: post
+title: Typeof, Instanceof, and Constructor
+categories: ['posts']
+tags: ['blog', 'code', 'javascript', 'wat', 'recurse']
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>
+While working on <a href="https://github.com/sranso/sreact">a project</a>, I came across a confusing failing test:
+</p>
+
+{% highlight javascript %}
+// this test
+it('should return an html string', () => {
+  expect(createElement(node)).to.be.instanceof(String);
+});
+// was failing:
+1) createElement module createElement should return an html string:
+AssertionError: expected '<div style="text-align: center; color: blue; margin: 20px" id="vdom"><p style="font-size: 20px;">12345</p></div>' to be an instance of String
+{% endhighlight %}
+
+<p>
+Why, though? <code>createElement(node)</code> does, in fact, return a string. So I went to the console:
+</p>
+
+<img src="/images/instanceof-typeof-constructor.png" />
+
+<p>
+These things seemed to be in contradiction. How could <code>n</code> be a type
+of string, whose constructor is also a string,
+but is not in fact an instance of a string?
+</p>
+
+<p>
+Looking at the MDN docs for
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">
+  <code>instanceof</code>
+</a>, it also seemed like this shouldn't be true:
+</p>
+
+<p class="quote">
+<i>object</i> instanceof <i>constructor</i>
+</p>
+
+<p>
+With the help of James Porter, I found
+<a href="http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals#203757">
+  this helpful StackOverflow post
+</a>
+which explains how string literals "are a different kind of object than objects created from within Javascript." 
+So, for example, creating a string literal
+{% highlight javascript %}
+var string = 'boop';
+typeof string; // 'string'
+{% endhighlight %}
+is different from creating a string object using the <code>String</code> function.
+{% highlight javascript %}
+var string = new String('boop');
+typeof string; // 'object'
+{% endhighlight %}
+These two vars, while they both behave as strings as far as we are concerned, are of different instances.
+</p>
+
+<p>
+Why is that? JavaScript is a prototype-based language (versus class-based). So, objects aren't instances of
+a class. Rather, you can only check if an object has another object in its prototype chain somewhere.
+And since literals are not an object, while a string created by the String constructor is,
+the string literal is not an instance of String.
+</p>
+
+<p>
+JavaScript wat.
+<p>
+
+<p class="post-footer">{{ page.date | date_to_string }}</p>
