@@ -103,6 +103,15 @@ footer a {
   fill: #1EAEDB;
 }
 
+code {
+  overflow: scroll;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 2.8rem;
+}
+
 /* Mobile first queries */
 
 /* Larger than mobile */
