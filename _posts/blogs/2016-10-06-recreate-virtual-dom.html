@@ -1,0 +1,89 @@
+---
+layout: post
+title: Recreating a Virtual DOM
+categories: ['posts']
+tags: ['blog', 'code', 'javascript', 'react', 'virtual-dom', 'recurse']
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>
+For the second half of my batch at <a href="https://www.recurse.com/">Recurse Center</a> I decided to focus
+on building a simple version of React. The process of deciding what part of React
+I wanted to work on was an interesting challenge, and I'd like to share that
+thought process.
+</p>
+
+<h2>Breaking it down</h2>
+
+<strong>The problem</strong>
+
+<p>
+<a href="https://facebook.github.io/react/docs/why-react.html">React</a> is JavaScript
+library for creating user interfaces, and it is made of many things:
+</p>
+<ul>
+  <li>virtual dom</li>
+  <li>components</li>
+  <li>props / state</li>
+  <li>jsx</li>
+</ul>
+
+<strong>The question</strong>
+
+<p>
+So what does it mean to rebuild a simple version of React – am I attempting to rebuild
+everything, or just specific parts? How thorough do I want to get in the reimplementation?
+</p>
+
+<strong>The conclusion</strong>
+
+<p>
+Ultimately, I ended up choosing to rebuild a simple version of the virtual dom.
+It seemed both interesting and challenging, and somewhat manageable.
+</p>
+
+<h2>The steps of a virtual DOM</h2>
+
+<p>
+These are the steps that my virtual DOM will perform:
+</p>
+
+<ol>
+  <li>create virtual DOM (vDOM) (a node representation what original DOM should look like)</li>
+  <li>convert that vDOM into an HTML string and append it to actual DOM</li>
+  <li>listen for updates from components</li>
+  <li>create new vDOM based on the changes</li>
+  <li>diff vDOM with old DOM (creating patches)</li>
+  <li>update old DOM with these patches</li>
+  <li>return to step 3</li>
+</ol>
+
+<h2>Now</h2>
+
+<p>
+<a href="https://github.com/sranso/sreact/commit/5bfe9d52ba35347c184c6e6ba266dd96a36c2910">
+  This is the current state of my project
+</a> and right now, these are some of the questions I have.
+</p>
+
+<ul>
+  <li>given my node structure, how do I index among multiple children</li>
+  <li>given my node structure, how do I to return multiple different child patches</li>
+  <li>how do I delete children from the original DOM if they don't exist in the new DOM</li>
+</ul>
+
+<p>
+Today, I plan to implement the minimum working version of diffing with what I have,
+and/or abandon ship, and refactor and build out a version of
+<a href="https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060#.fess65wex">
+  this tutorial's implementation
+</a>
+using TDD (I'm trying to use more TDD!).
+</p>
+
+<p>
+And that's the state of things.
+</p>
+
+<p class="post-footer">{{ page.date | date_to_string }}</p>
