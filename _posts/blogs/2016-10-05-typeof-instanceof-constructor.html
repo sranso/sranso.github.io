@@ -5,10 +5,10 @@ categories: ['posts']
 tags: ['blog', 'code', 'javascript', 'wat', 'recurse']
 ---
 
-<h1>{{ page.title }}</h1>
+<h1 class="ttu">{{ page.title }}</h1>
 
 <p>
-While working on <a href="https://github.com/sranso/sreact">a project</a>, I came across a confusing failing test:
+While working on <a href="https://github.com/sranso/sreact" class="link black underline hover-bg-light-blue">a project</a>, I came across a confusing failing test:
 </p>
 
 {% highlight javascript %}
@@ -22,20 +22,20 @@ AssertionError: expected '<div style="text-align: center; color: blue; margin: 2
 {% endhighlight %}
 
 <p>
-Why, though? <code>createElement(node)</code> does, in fact, return a string. I went to the console to experiment.
+Why, though? <code class="overflow-scroll">createElement(node)</code> does, in fact, return a string. I went to the console to experiment.
 </p>
 
-<img src="/images/instanceof-typeof-constructor.png" />
+<img src="/images/instanceof-typeof-constructor.png" class="mw-100 mb4"/>
 
 <p>
-These things seemed to be in contradiction. How could <code>n</code> be a type
+These things seemed to be in contradiction. How could <code class="overflow-scroll">n</code> be a type
 of string, where the constructor is the String function,
 but is not in fact an instance of String?
 </p>
 
 <p>
 With the help of James Porter, I found
-<a href="http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals#203757">
+<a href="http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals#203757" class="link black underline hover-bg-light-blue">
   this helpful StackOverflow post
 </a>
 which explains how string literals "are a different kind of object than objects created from within Javascript." 
@@ -44,7 +44,7 @@ So, for example, creating a string literal
 var string = 'boop';
 typeof string; // 'string'
 {% endhighlight %}
-is different from creating a string object using the <code>String</code> function.
+is different from creating a string object using the <code class="overflow-scroll">String</code> function.
 {% highlight javascript %}
 var string = new String('boop');
 typeof string; // 'object'
@@ -59,16 +59,16 @@ a class. Rather, you can only check if an object has another object in its proto
 </p>
 
 <p>
-The syntax for <code>instanceof</code> is
+The syntax for <code class="overflow-scroll">instanceof</code> is
 </p>
 
-<p class="quote">
-<i>object</i> instanceof <i>constructor</i>
+<p class="light-silver ml4 pl3 bl b--light-gray">
+<span class="i">object</span> instanceof <span class="i">constructor</span>
 </p>
 
 <p>
 where it "tests whether an object has in its prototype chain the prototype property of a constructor"
-(from the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">MDN docs</a>).
+(from the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" class="link black underline hover-bg-light-blue">MDN docs</a>).
 </p>
 
 <p>
@@ -80,4 +80,4 @@ the string literal is not an instance of String.
 JavaScript wat.
 </p>
 
-<p class="post-footer">{{ page.date | date_to_string }}</p>
+<p class="tr i">{{ page.date | date_to_string }}</p>

@@ -4,15 +4,15 @@ title: Projects
 ---
 
 <div id="posts">
-  <h1>Projects</h1>
-  <ul class="posts">
+  <h1 class="ttu">Projects</h1>
+  <ul class="posts ml2 list">
     {% for project in site.categories.projects %}
-      <li>
-        <a class="post-title" href="{{ project.url }}">{{ project.title }}</a>
+      <li class="mb4 pb3 bb b--light-gray">
+        <a class="link black underline hover-bg-light-blue f2" href="{{ project.url }}">{{ project.title }}</a>
         <br />
-        <span class="post-date">{{ project.date | date_to_string }}</span>
+        <span class="mr3">{{ project.date | date_to_string }}</span>
         {% for tag in project.tags %}
-          <span class="post-tag">#{{ tag }}</span>
+          <span class="gray">#{{ tag }}</span>
         {% endfor %}
       </li>
     {% endfor %}
