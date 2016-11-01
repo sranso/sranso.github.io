@@ -1,5 +1,6 @@
 code {
   overflow: scroll;
+  font-size: 1.25rem;
 }
 
 /* Mobile first queries */

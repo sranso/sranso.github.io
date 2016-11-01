@@ -1,0 +1,178 @@
+---
+layout: post
+title: Recreating a Virtual DOM, Part 2
+categories: ['posts']
+tags: ['blog', 'code', 'javascript', 'react', 'virtual-dom', 'recurse']
+custom_js: 'https://rawgit.com/sranso/sreact/master/build/index.bundle.js'
+---
+
+<h1 class="ttu">{{ page.title }}</h1>
+
+<p>
+A few weeks ago, I <a href="/posts/2016/10/06/recreate-virtual-dom.html" class="link black underline hover-bg-light-blue">wrote</a>
+about the proces recreating a virtual DOM.
+Since then I’ve made a lot of changes and progress that I’d like to share, or at the very least, log for myself.
+</p>
+
+<p>
+First, let’s take a look at an example of this virtual DOM in action!
+Below is a simple todo list generator I made using my virtual DOM.
+</p>
+
+<p>
+<span class="b ttu">demo</span>
+<span class="i">source code <a href="https://github.com/sranso/sreact" class="link black underline hover-bg-light-blue">here</a></span>
+</p>
+
+<div class="pa4 overflow-scroll ba b--dashed vh-50 mb5">
+  <div id="root"></div>
+  <script src="{{ page.custom_js }}" type="text/javascript"></script>
+</div>
+
+<h2 class="b">How it works</h2>
+
+<p>
+Let's walk through how it works.
+</p>
+
+<p class="b">1. Create virtual DOM (vDOM)</p>
+<p>
+Create a vDOM that has one root node and many child nodes. This is our original DOM representation.
+</p>
+
+{% highlight javascript %}
+const vDom = createNode('div', { }, [
+  createNode('form', { }, [
+    createNode('label', { }, [ 'add a todo' ]),
+    createNode('input', {
+      type: 'text',
+      id: 'text'
+    }, [ '' ]),
+    createNode('input', {
+      type: 'submit',
+      value: 'save todo',
+      onClick: saveTodo
+    }, [ '' ])
+  ]),
+  createNode('div', { }, [ 'todos' ]),
+  createNode('ul', { }, mapTodos(JSON.parse(localStorage.todos)))
+]);
+{% endhighlight %}
+
+<p>
+<code>createNode</code> takes three things: an element type, an object of HTML attributes and/or event listeners, and an array of children.
+It returns a <code>VirtualNode</code> whose children are either other <code>VirtualNode</code>s or, if the child is a string,
+a <code>VirtualText</code> node.
+</p>
+
+<p class="b">2. Call render</p>
+<p>
+<code>render</code> takes a vDOM and the DOM root in which to render the vDOM.
+A lot happens in this <code>render</code> function, but for the sake of this post,
+the two most important are:
+</p>
+
+<div class="ml4">
+<p class="b">i. diff between the old vDOM and the new vDOM</p>
+<p>
+<code>diff</code> takes two vDOMs and finds all differences (or patches) between these two trees.
+It returns an array of patches (<code>VirtualPatch</code>) that have a type (replace, add, or delete),
+a patch node, a parent node, and a replace target (if the type is replace).
+</p>
+
+<p class="b">ii. patch those differences onto the DOM</p>
+<p>
+<code>patch</code> takes the root DOM node and the array of patches, finds the DOM nodes that need
+patches applied, and applies them. This is when the DOM actually gets updated.
+</p>
+</div>
+
+<h2 class="b">Various approaches I took</h2>
+
+<p>
+I took a lot of different approaches to get to this current implementation.
+These are listed in chronological order of implementation (so, the last note is
+the current implementation). As I'm sure you can imagine, if an implementation
+was abandoned, it was abandoned because I hit a problem with that implementation.
+Obstacles drive creativity!
+(If you have any questions about why an approach was abandoned, shoot me an email /
+tweet and we can talk about it.)
+</p>
+
+<span class="b">general things</span>
+<ul>
+  <li>use simple objects</li>
+  <li>use classes (eg VirtualNode, VirtualText, VirtualPatch)</li>
+</ul>
+
+<code>createNode</code>
+<ul>
+  <li>represent nodes using elm-like div representation (eg ['p', { class: 'inline' }, [ 'hello world' ]]); no ids</li>
+  <li>represent nodes as simple objects, with ids (eg { elType: 'div', atts: { class: 'inline' }, children: [ 'hi' ], id: 1 } )</li>
+  <li>represent nodes as as either VirtualNode or VirtualText</li>
+  <li><span class="i">only</span> give ids to nodes that need them</li>
+  <li>give <span class="i">no</span> nodes ids; instead, give each node a reference to their DOM el</li>
+</ul>
+
+<code>render</code>
+<ul>
+  <li>simply render the created element into DOM</li>
+  <li>be a wrapper for all logic around diffing and patching, plus keep a reference to the latest tree</li>
+</ul>
+
+<code>createElement</code>
+<ul>
+  <li>return a string (eg root.innerHTML = createElement(vNode))</li>
+  <li>return a DOM node (eg root.appendChild(createElement(vNode)))</li>
+</ul>
+
+<code>diff</code>
+<ul>
+  <li>store a reference to the target note</li>
+  <li>store a path to target note</li>
+  <li>return an object of patches with keys as indices of the parent node, and the values as patches</li>
+  <li>create DOM elements while diffing, and save a reference to the element on each virtual node</li>
+  <li>return an array of patches</li>
+</ul>
+
+<code>patch</code>
+<ul>
+  <li>apply patches while traversing vdom, and somehow find the corresponding element in the DOM (how, lol)</li>
+  <li>apply patches using each virtual node's reference to its DOM element (no manual DOM walking)</li>
+</ul>
+
+<h2 class="b">Other implementations</h2>
+
+<p>
+Other libraries implement the virtual DOM differently. Here are some (brief) explanations of my understanding of
+how others have / do implement the virtual DOM.
+Note:
+1. This is not an exhaustive list – there are many implementations
+out there. These are simply a few that I looked at while making my own virutal DOM in an attempt to understand
+where to get started and how others were approaching the problem.
+2. If I have misunderstood how any of these currently implement a virtual DOM, please let me know via email /
+Twitter!
+</p>
+
+<p class="b">React.DOM</p>
+<p>
+https://github.com/facebook/react/tree/master/packages/react-dom
+</p>
+
+<p class="b">Preact</p>
+<p>
+https://github.com/developit/preact
+</p>
+
+<p class="b">virtual-dom</p>
+<p>
+https://github.com/Matt-Esch/virtual-dom
+</p>
+
+
+<p class="b">Elm</p>
+<p>
+https://github.com/elm-lang/virtual-dom
+</p>
+
+<p class="tr i">{{ page.date | date_to_string }}</p>
