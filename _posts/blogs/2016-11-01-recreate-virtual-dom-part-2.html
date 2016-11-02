@@ -32,7 +32,23 @@ Below is a simple todo list generator I made using my virtual DOM.
 <h2 class="b">How it works</h2>
 
 <p>
-Let's walk through how it works.
+On a high level, here's what's happening in this demo:
+</p>
+<ul>
+  <li>Create an initial virtual tree</li>
+  <li>Render this initial virtual tree into the DOM (by diffing it against an empty virtual DOM and applying those patches to the real DOM)</li>
+  <li>A user (you) submits a todo</li>
+  <li>A new virtual tree is created, one that contains the new todo but is otherwise the same as the previous virtual tree</li>
+  <li>Compare the new virtual tree with the old virtual tree, and find the differences (items that we need to: replace, add, or delete)</li>
+  <li>Apply those differences (aka patches) to the real DOM, <span class="i">only</span> changing what <span class="i">needs</span> to be changed
+    (you can confirm this by opening up the dev tools and watching the DOM in the elements tab as you add todos)
+  </li>
+  <li>Replace our old virtual tree reference with this new, updated virtual tree so the program knows about the latest virtual DOM representation</li>
+  <li>Start listening for more changes</li>
+</ul>
+
+<p>
+Let's look closer at some of these key parts.
 </p>
 
 <p class="b">1. Create virtual DOM (vDOM)</p>
@@ -91,7 +107,7 @@ patches applied, and applies them. This is when the DOM actually gets updated.
 
 <p>
 I took a lot of different approaches to get to this current implementation.
-These are listed in chronological order of implementation (so, the last note is
+These are listed in chronological order of implementation (so, the last node is
 the current implementation). As I'm sure you can imagine, if an implementation
 was abandoned, it was abandoned because I hit a problem with that implementation.
 Obstacles drive creativity!
@@ -99,80 +115,99 @@ Obstacles drive creativity!
 tweet and we can talk about it.)
 </p>
 
-<span class="b">general things</span>
+<span class="b">General things</span>
 <ul>
-  <li>use simple objects</li>
-  <li>use classes (eg VirtualNode, VirtualText, VirtualPatch)</li>
+  <li>Use simple objects</li>
+  <li>Use classes (eg VirtualNode, VirtualText, VirtualPatch)</li>
 </ul>
 
 <code>createNode</code>
 <ul>
-  <li>represent nodes using elm-like div representation (eg ['p', { class: 'inline' }, [ 'hello world' ]]); no ids</li>
-  <li>represent nodes as simple objects, with ids (eg { elType: 'div', atts: { class: 'inline' }, children: [ 'hi' ], id: 1 } )</li>
-  <li>represent nodes as as either VirtualNode or VirtualText</li>
-  <li><span class="i">only</span> give ids to nodes that need them</li>
-  <li>give <span class="i">no</span> nodes ids; instead, give each node a reference to their DOM el</li>
+  <li>Represent nodes using elm-like div representation (eg ['p', { class: 'inline' }, [ 'hello world' ]]); no ids</li>
+  <li>Represent nodes as simple objects, with ids (eg { elType: 'p', atts: { class: 'inline' }, children: [ 'hello world' ], id: 1 } )</li>
+  <li>Represent nodes as as either VirtualNode or VirtualText</li>
+  <li><span class="i">Only</span> give ids to nodes that need them</li>
+  <li>Give <span class="i">no</span> nodes ids; instead, give each node a reference to their DOM el</li>
 </ul>
 
 <code>render</code>
 <ul>
-  <li>simply render the created element into DOM</li>
-  <li>be a wrapper for all logic around diffing and patching, plus keep a reference to the latest tree</li>
+  <li>Simply render the created element into DOM</li>
+  <li>Be a wrapper for all logic around diffing and patching, plus keep a reference to the latest tree</li>
 </ul>
 
 <code>createElement</code>
 <ul>
-  <li>return a string (eg root.innerHTML = createElement(vNode))</li>
-  <li>return a DOM node (eg root.appendChild(createElement(vNode)))</li>
+  <li>Return a string (eg root.innerHTML = createElement(vNode))</li>
+  <li>Return a DOM node (eg root.appendChild(createElement(vNode)))</li>
 </ul>
 
 <code>diff</code>
 <ul>
-  <li>store a reference to the target note</li>
-  <li>store a path to target note</li>
-  <li>return an object of patches with keys as indices of the parent node, and the values as patches</li>
-  <li>create DOM elements while diffing, and save a reference to the element on each virtual node</li>
-  <li>return an array of patches</li>
+  <li>Store a reference to the target node</li>
+  <li>Store a path to target node</li>
+  <li>Return an object of patches with keys as indices of the parent node, and the values as patches</li>
+  <li>Create DOM elements while diffing, and save a reference to the element on each virtual node</li>
+  <li>Return an array of patches</li>
 </ul>
 
 <code>patch</code>
 <ul>
-  <li>apply patches while traversing vdom, and somehow find the corresponding element in the DOM (how, lol)</li>
-  <li>apply patches using each virtual node's reference to its DOM element (no manual DOM walking)</li>
+  <li>Apply patches while traversing vdom, and somehow find the corresponding element in the DOM (how, lol)</li>
+  <li>Apply patches using each virtual node's reference to its DOM element (no manual DOM walking)</li>
 </ul>
 
 <h2 class="b">Other implementations</h2>
 
 <p>
-Other libraries implement the virtual DOM differently. Here are some (brief) explanations of my understanding of
-how others have / do implement the virtual DOM.
-Note:
-1. This is not an exhaustive list – there are many implementations
-out there. These are simply a few that I looked at while making my own virutal DOM in an attempt to understand
-where to get started and how others were approaching the problem.
-2. If I have misunderstood how any of these currently implement a virtual DOM, please let me know via email /
-Twitter!
+Other libraries implement the virtual DOM differently. Here are a few other implementations that I looked at while
+making my own virutal DOM in an attempt to understand where to get started and how others were approaching the problem.
 </p>
 
-<p class="b">React.DOM</p>
+<ul>
+<li>
+<a href="https://github.com/facebook/react/tree/master/packages/react-dom" class="link black underline hover-bg-light-blue">React.DOM</a>
+</li>
+
+<li>
+<a href="https://github.com/developit/preact" class="link black underline hover-bg-light-blue">Preact</a>
+</li>
+
+<li>
+<a href="https://github.com/Matt-Esch/virtual-dom" class="link black underline hover-bg-light-blue">virtual-dom</a>
+</li>
+
+<li>
+<a href="https://github.com/elm-lang/virtual-dom" class="link black underline hover-bg-light-blue">Elm</a>
+</li>
+
+<li>
+<a href="https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060#.fess65wex" class="link black underline hover-bg-light-blue">lightweight virtual DOM</a>
+</li>
+</ul>
+
+
+<h2 class="b">Moving forward</h2>
+
 <p>
-https://github.com/facebook/react/tree/master/packages/react-dom
+There are obviously lots of things I could do to improve this virtual DOM implementation, a few being...
 </p>
 
-<p class="b">Preact</p>
+<ul>
+<li>use JSX</li>
+<li>fix all these tests lol</li>
+<li>add more rigourous tests</li>
+<li>be more selective about what qualifies as a patch (eg if the first item in a list changes, but the rest don't, don't replace <span class="i">all</span> the preceding nodes;
+  just replace the one that changed)</li>
+</ul>
+
 <p>
-https://github.com/developit/preact
+In the meantime, I built a thing! And I'm pretty proud of it. ;)
 </p>
 
-<p class="b">virtual-dom</p>
 <p>
-https://github.com/Matt-Esch/virtual-dom
+Special thanks to <a href="https://github.com/nschuc" class="link black underline hover-bg-light-blue">Nathan</a> who was incredibly helpful the whole time.
 </p>
 
-
-<p class="b">Elm</p>
-<p>
-https://github.com/elm-lang/virtual-dom
-</p>
 
 <p class="tr i">{{ page.date | date_to_string }}</p>
