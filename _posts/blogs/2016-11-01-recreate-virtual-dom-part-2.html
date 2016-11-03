@@ -10,7 +10,7 @@ custom_js: 'https://rawgit.com/sranso/sreact/master/build/index.bundle.js'
 
 <p>
 A few weeks ago, I <a href="/posts/2016/10/06/recreate-virtual-dom.html" class="link black underline hover-bg-light-blue">wrote</a>
-about the proces recreating a virtual DOM.
+about the process of recreating a virtual DOM.
 Since then I’ve made a lot of changes and progress that I’d like to share, or at the very least, log for myself.
 </p>
 
@@ -82,32 +82,130 @@ a <code>VirtualText</code> node.
 </p>
 
 <p class="b">2. Call render</p>
+
 <p>
-<code>render</code> takes a vDOM and the DOM root in which to render the vDOM.
-A lot happens in this <code>render</code> function, but for the sake of this post,
-the two most important are:
+On a high level, <code>render</code> takes a vDOM and the DOM root in which to render the vDOM,
+and then performs a lot of the logic we discussed above.
+</p>
+
+{% highlight javascript %}
+// keep track of the latest vDOM
+let tree = new VirtualNode('', {}, []);
+
+const render = (vRoot, domRoot) => {
+  // add a reference to the root DOM element to the tree. this part will only happen on the first render
+  if (!tree.$el) {
+    tree.$el = domRoot;
+  }
+  // find all differences between the old tree and the new one
+  let patches = diff(tree, vRoot)
+  // apply all these patches
+  patch(domRoot, patches)
+  // add a root node to the new tree
+  let newTree = new VirtualNode('', {}, [vRoot]);
+  // save a reference to the root DOM element to the new tree
+  newTree.$el = domRoot;
+  // replace the old with the new
+  tree = newTree;
+
+  return tree;
+}
+{% endhighlight %}
+
+<p>
+Let's look a little closer at <code>diff</code> and <code>patch</code>, as these are two key
+parts of a functioning virtual DOM.
 </p>
 
 <div class="ml4">
-<p class="b">i. diff between the old vDOM and the new vDOM</p>
-<p>
-<code>diff</code> takes two vDOMs and finds all differences (or patches) between these two trees.
-It returns an array of patches (<code>VirtualPatch</code>) that have a type (replace, add, or delete),
-a patch node, a parent node, and a replace target (if the type is replace).
-</p>
+  <p class="b">i. diff between the old vDOM and the new vDOM</p>
+  <p>
+    <code>diff</code> takes two vDOMs and finds all differences (or patches) between these two trees.
+    It returns an array of patches (<code>VirtualPatch</code>) that have a type (replace, add, or delete),
+    a patch node, a parent node, and a replace target (if the type is replace).
+  </p>
+  <p>
+    The algorithm is pretty long so I won't show it all here, but if you want to take a look you can
+    see it on <a href="https://github.com/sranso/sreact/blob/master/src/diff.js" class="link black underline hover-bg-light-blue">github.</a>
+    On a high level (and in pseudo-code!), this is what happens:
+  </p>
 
-<p class="b">ii. patch those differences onto the DOM</p>
-<p>
-<code>patch</code> takes the root DOM node and the array of patches, finds the DOM nodes that need
-patches applied, and applies them. This is when the DOM actually gets updated.
-</p>
+{% highlight javascript %}
+const diff = (oldTree, newTree) => {
+  // kick off walking both trees, while keeping track of the parent node
+  return walk(oldTree.children[0], newTree, oldTree);
+};
+
+const walk = (oldTree, newTree, parentNode) => {
+  if (oldTree === newTree) {
+    return;
+  }
+
+  if (!oldTree) {
+    // patch type: ADD
+    return [new VirtualPatch(newTree, parentNode, 'ADD')];
+  } else if (!newTree) {
+    // patch type: DEL
+    return [new VirtualPatch(oldTree, parentNode, 'DEL')];
+  } else if (oldTree !== newTree) {
+    // patch type: REPL
+    return [new VirtualPatch(newTree, parentNode, 'REPL', oldTree)];
+  } else {
+    // check children for patches
+    const maxChildren = Math.max(oldTree.children.length, newTree.children.length);
+    let childPatchesArray = [];
+
+    for (let i = 0; i <= maxChildren; i++) {
+      const oldTreeChild = oldTree.children[i];
+      const newTreeChild = newTree.children[i];
+      const childPatch = walk(oldTreeChild, newTreeChild, oldTree);
+      if (childPatch) {
+        childPatchesArray = childPatchesArray.concat(childPatch);
+      }
+    }
+    return childPatchesArray;
+  }
+};
+{% endhighlight %}
+
+  <p class="b">ii. patch those differences onto the DOM</p>
+  <p>
+    <code>patch</code> takes the root DOM node and the array of patches (provided to us by the <code>diff</code>
+    algorithm), finds the DOM nodes that need patches applied, and applies them.
+    This is when the DOM actually gets updated.
+  </p>
+
+{% highlight javascript %}
+const patch = (domNode, patches) => {
+  // need to reverse patches so they get applied in order
+  patches.reverse().forEach(applyPatch);
+
+  return domNode;
+};
+
+const applyPatch = ({ patchNode, parentNode, type, replTarget }) => {
+  if (type === 'ADD') {
+    parentNode.$el.appendChild(patchNode.$el);
+  } else if (type === 'DEL') {
+    parentNode.$el.removeChild(
+      $patchEl
+    );
+  } else if (type === 'REPL') {
+    parentNode.$el.replaceChild(
+      patchNode.$el,
+      replTarget.$el
+    );
+  }
+};
+{% endhighlight %}
+
 </div>
 
 <h2 class="b">Various approaches I took</h2>
 
 <p>
 I took a lot of different approaches to get to this current implementation.
-These are listed in chronological order of implementation (so, the last node is
+These are listed in chronological order of implementation (so, the last note is
 the current implementation). As I'm sure you can imagine, if an implementation
 was abandoned, it was abandoned because I hit a problem with that implementation.
 Obstacles drive creativity!
@@ -194,10 +292,9 @@ There are obviously lots of things I could do to improve this virtual DOM implem
 </p>
 
 <ul>
-<li>use JSX</li>
-<li>fix all these tests lol</li>
-<li>add more rigourous tests</li>
-<li>be more selective about what qualifies as a patch (eg if the first item in a list changes, but the rest don't, don't replace <span class="i">all</span> the preceding nodes;
+<li>Use JSX</li>
+<li>Add more rigourous tests</li>
+<li>Be more selective about what qualifies as a patch (eg if the first item in a list changes, but the rest don't, don't replace <span class="i">all</span> the preceding nodes;
   just replace the one that changed)</li>
 </ul>
 
