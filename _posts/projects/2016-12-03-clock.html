@@ -1,0 +1,25 @@
+---
+layout: post
+title: Clock
+categories: ['projects']
+project_link: '/clock-circles'
+tags: ['clock', 'javascript', 'art', 'canvas']
+---
+
+<h1 class="ttu">{{ page.title }}</h1>
+<p>
+I built a simple clock using vanilla Javascript and canvas. What was fun about this mini project was the concept and the organization.</p>
+
+<p>
+The concept is three concentric circles: seconds at the center, then minutes, then hours. Each time unit is bound by its "parent" – seconds can never exceed the radius of minutes, nor minutes of hours. This was fun to play with.
+</p>
+
+<p>
+The organization of the Javascript file mimics that of React – storing state in a singular object. Each function has a singular purpose. If we wanted to be more React-y/functional, we could return a new state rather than modifying the original. (I also have a list of other things one could "do next" in the readme.)
+</p>
+
+<p>
+You can see it in action <a href="{{ page.project_link }}" class="link black underline hover-bg-light-blue">here</a> (note: it only works in Chrome because of the input I used ;) ) and view the source code <a href="https://github.com/sranso{{ page.project_link }}" class="link black underline hover-bg-light-blue">here.</a>
+</p>
+
+<p class="tr i">{{ page.date | date_to_string }}</p>
