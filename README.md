@@ -1,4 +1,6 @@
-Makes the sound of violins.
+```
+$ bundle exec jekyll serve
+```
 
 Use
 * http://tachyons.io/
