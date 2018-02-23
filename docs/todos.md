@@ -1,3 +1,9 @@
+## todos 02/23/18
+- cont art / programming division
+- /programming/projects/ and /p/posts/ and /a/pieces/ ? or /projects/ /posts/ /pieces/ ?
+- inspo: http://grantshaffer.com/, http://evan.siegel.hiphop/
+- use markdown?
+
 ## building
 - hosting
 
