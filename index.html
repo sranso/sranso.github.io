@@ -8,9 +8,9 @@ title: Sarah Ransohoff
     <p>slider {{ site.data.images }} </p>
     {% for image in site.data.images %}
       {% if image.href != null %}
-      <a href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+        <a href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
       {% else %}
-        <img src="{{ image.src }}" alt="{{ image.alt }}">
+        <img src="{{ image.src }}" alt="{{ image.alt }}" />
       {% endif %}
     {% endfor %}
   </div>
