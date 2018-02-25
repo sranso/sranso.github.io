@@ -3,7 +3,7 @@
 - move watercolors-etc ? it's not a great folder name
 - link to http://cargocollective.com/sarahransohoff/ and instagram
 - gnight unc?
-- show images better on category pages?
+- show images better on category pages? carousel?
 
 ## building
 - hosting
