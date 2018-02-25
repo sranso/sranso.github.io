@@ -5,13 +5,25 @@ title: Sarah Ransohoff
 
 <div class="mt6">
   <div id="slider">
-    <p>slider {{ site.data.images }} </p>
-    {% for image in site.data.images %}
-      {% if image.href != null %}
-        <a href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-      {% else %}
-        <img src="{{ image.src }}" alt="{{ image.alt }}" />
-      {% endif %}
+    <a class="w-40 pointer dim link mb4" href="https://www.newyorker.com/humor/daily-shouts/things-a-startup-has-instead-of-hr" target="_blank"><img src="/img/cartoons/things-a-startup-has-instead-hr.jpg" alt="The New Yorker – Things a startup has instead of HR"/></a>
+    {% for list in site.data.images %}
+      {% for image in list[1] %}
+        {% if image.featured != null %}
+          {% if image.href != null %}
+            <a class="pointer" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+          {% else %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" />
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     {% endfor %}
+  </div>
+
+  <div class="justify-center flex mt6">
+    <a class="ph2 gray" href="/art/all">all</a>
+    <a class="ph2 gray" href="/art/sketchbook">sketchbook</a>
+    <a class="ph2 gray" href="/art/watercolors-etc">watercolors etc</a>
+    <a class="ph2 gray" href="/art/cartoons">cartoons</a>
+    <a class="ph2 gray" href="/art/people">people</a>
   </div>
 </div>
