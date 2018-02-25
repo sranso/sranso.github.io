@@ -1,12 +1,9 @@
 ## todos 02/23/18
-- cont art / programming division
-- /programming/projects/ and /p/posts/ and /a/pieces/ ? or /projects/ /posts/ /pieces/ ?
 - inspo: http://grantshaffer.com/ http://evan.siegel.hiphop/
-- images / pieces
-  - ny'er
-  - valentines
-  - link to http://cargocollective.com/sarahransohoff/ and instagram
-  - gnight unc?
+- move watercolors-etc ? it's not a great folder name
+- link to http://cargocollective.com/sarahransohoff/ and instagram
+- gnight unc?
+- show images better on category pages?
 
 ## building
 - hosting
