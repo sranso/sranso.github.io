@@ -9,6 +9,16 @@ title: Sarah Ransohoff
     Hi, my name is Sarah Ransohoff. I am a software engineer, an improviser, a <a href="https://www.instagram.com/sranso_paints" class="link black underline hover-bg-light-blue" target="blank">painter</a>, and a real life human.
     I value communication, sharing knowledge, and having fun.
   </p>
+  <div id="slider">
+    <p>slider {{ site.data.images }} </p>
+    {% for image in site.data.images %}
+      {% if image.href != null %}
+      <a href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+      {% else %}
+        <img src="{{ image.src }}" alt="{{ image.alt }}">
+      {% endif %}
+    {% endfor %}
+  </div>
   <a href="/programming/">programming</a>
 </div>
 

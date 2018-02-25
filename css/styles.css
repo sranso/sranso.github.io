@@ -3,6 +3,10 @@ code {
   font-size: 1.25rem;
 }
 
+.iis-slide {
+  background-size: contain;
+}
+
 /* Mobile first queries */
 
 /* Larger than mobile */

@@ -1,1 +1,4 @@
-new IdealImageSlider.Slider('#slider');
+new IdealImageSlider.Slider({
+  selector: '#slider',
+  height: 500,
+});
