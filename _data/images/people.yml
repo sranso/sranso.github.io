@@ -1,3 +1,6 @@
+- src: /img/people/sva-editorial.jpg
+  featured: true
+  alt: Pen and Photoshop
 - src: /img/people/man-portrait.jpg
   alt: Ink
   featured: true
