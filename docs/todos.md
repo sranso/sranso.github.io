@@ -1,9 +1,12 @@
 ## todos 02/23/18
 - inspo: http://grantshaffer.com/ http://evan.siegel.hiphop/
-- move watercolors-etc ? it's not a great folder name
-- link to http://cargocollective.com/sarahransohoff/ and instagram
-- gnight unc?
+- art to add
+  - gnight unc?
+  - bill / diogo ink
+  - oils at home
+  - link to http://cargocollective.com/sarahransohoff/ and instagram
 - show images better on category pages? carousel?
+- replace hover-bg with hover-
 
 ## building
 - hosting
