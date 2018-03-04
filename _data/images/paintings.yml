@@ -1,30 +1,45 @@
-- src: /img/watercolors-etc/nandy-invite-final.jpg
-  alt: Wedding invitation, watercolor
-  featured: true
-- src: /img/watercolors-etc/lucy-asks-the-waves-to-play-2017.jpg
+- src: /img/paintings/lucy-asks-the-waves-to-play-2017.jpg
   alt: Children's book, watercolor
   featured: true
-- src: /img/watercolors-etc/galway-bar-watercolor-2017.JPG
+- src: /img/paintings/galway-bar-watercolor-2017.JPG
   alt: Galway, watercolor
   featured: true
-- src: /img/watercolors-etc/ireland-landscape-2017.jpg
+- src: /img/paintings/ireland-landscape-2017.jpg
   alt: Ireland, watercolor
-- src: /img/watercolors-etc/canada-hilton-sketch-2017.jpg
+- src: /img/paintings/canada-hilton-sketch-2017.jpg
   alt: Canada, watercolor
-- src: /img/watercolors-etc/canada-rocks-and-water-sketch-2017.jpg
+- src: /img/paintings/canada-rocks-and-water-sketch-2017.jpg
   alt: Canada, watercolor
-- src: /img/watercolors-etc/canada-sketch-2017.jpg
+- src: /img/paintings/canada-sketch-2017.jpg
   alt: Canada, watercolor
   featured: true
-- src: /img/watercolors-etc/canada-windows-sketch-2017.jpg
+- src: /img/paintings/canada-windows-sketch-2017.jpg
   alt: Canada, watercolor
-- src: /img/watercolors-etc/cliffs-of-moher-2017.jpg
+- src: /img/paintings/cliffs-of-moher-2017.jpg
   alt: Ireland, watercolor
-- src: /img/watercolors-etc/curtains.jpg
+- src: /img/paintings/curtains.jpg
   alt: Curtains, link
-- src: /img/watercolors-etc/peonies-sketch-2017.JPG
+- src: /img/paintings/peonies-sketch-2017.JPG
   alt: Peonies, watercolor
+- src: /img/paintings/Flowers_oil.jpg
+  alt: Flowers, oil
+- src: /img/paintings/velazquez.JPG
+  alt: Velazquez, oil
+- src: /img/paintings/landscape_o.jpg
+  alt: Landscape, oil
+- src: /img/paintings/sean.jpg
+  alt: Portrait, oil
+- src: /img/paintings/books-oil.jpg
+  alt: Books, oil
+  featured: true
+- src: /img/paintings/cups-bowls.jpg
+  alt: Cups bowls, oil
+- src: /img/people/woman-man-ink.png
+  alt: Ink
 - src: /img/people/man-portrait.jpg
   alt: Ink
 - src: /img/people/emma-sketch.jpg
   alt: Watercolor
+- src: /img/paintings/nandy-invite-final.jpg
+  alt: Wedding invitation, watercolor
+  featured: true
