@@ -1,9 +1,7 @@
 - src: /img/paintings/lucy-asks-the-waves-to-play-2017.jpg
   alt: Children's book, watercolor
-  featured: true
 - src: /img/paintings/galway-bar-watercolor-2017.JPG
   alt: Galway, watercolor
-  featured: true
 - src: /img/paintings/ireland-landscape-2017.jpg
   alt: Ireland, watercolor
 - src: /img/paintings/canada-hilton-sketch-2017.jpg
@@ -12,7 +10,6 @@
   alt: Canada, watercolor
 - src: /img/paintings/canada-sketch-2017.jpg
   alt: Canada, watercolor
-  featured: true
 - src: /img/paintings/canada-windows-sketch-2017.jpg
   alt: Canada, watercolor
 - src: /img/paintings/cliffs-of-moher-2017.jpg
@@ -31,7 +28,6 @@
   alt: Portrait, oil
 - src: /img/paintings/books-oil.jpg
   alt: Books, oil
-  featured: true
 - src: /img/paintings/cups-bowls.jpg
   alt: Cups bowls, oil
 - src: /img/people/woman-man-ink.png
@@ -42,4 +38,3 @@
   alt: Watercolor
 - src: /img/paintings/nandy-invite-final.jpg
   alt: Wedding invitation, watercolor
-  featured: true
