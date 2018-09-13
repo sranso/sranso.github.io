@@ -10,9 +10,9 @@ title: Sarah Ransohoff
   <div class="flex flex-wrap items-center justify-between">
     {% for image in site.data.images.editorial %}
       {% if image.href != null %}
-        <a class="w-40 pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
       {% else %}
-        <div class="w-40 pointer dim link mb4">
+        <div class="w-100 w-40-ns pointer dim link mb4">
           <a href="{{ image.src }}" target="_blank">
             <img src="{{ image.src }}" alt="{{ image.alt }}">
           </a>

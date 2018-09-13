@@ -10,15 +10,15 @@ title: Sarah Ransohoff
   <div class="flex flex-wrap items-center justify-between">
     {% for image in site.data.images.cartoons %}
       {% if image.href != null %}
-        <div class="w-40 mb4">
+        <div class="w-100 w-40-ns mb4">
           <p class="mb0 tc gray">Click image to see <i>The New Yorker</i> article.</p>
           <a
-            class="w-40 pointer dim link mb4 _new-yorker"
+            class="pointer dim link mb4 _new-yorker"
             href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/>
           </a>
         </div>
       {% else %}
-        <div class="w-40 pointer dim link mb4">
+        <div class="w-100 w-40-ns pointer dim link mb4">
           <a href="{{ image.src }}" target="_blank">
             <img src="{{ image.src }}" alt="{{ image.alt }}">
           </a>
