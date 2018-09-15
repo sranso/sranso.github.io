@@ -4,7 +4,7 @@
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
-  <meta name="description" content="Sarah Ransohoff's personal website">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta name="author" content="Sarah Ransohoff">
 
   <!-- Mobile Specific Metas -->
