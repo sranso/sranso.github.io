@@ -4,6 +4,18 @@ title: Sarah Ransohoff
 ---
 
 <div class="mt6">
+  <div class="justify-center flex flex-wrap mt6">
+    <a class="ph2 gray hover-bg-light-blue" href="/art/cartoons">The New Yorker &amp; cartoons</a>
+    <a class="ph2 gray hover-bg-light-blue" href="/art/sketchbook">sketchbook</a>
+    <a class="ph2 gray hover-bg-light-blue" href="/art/ipad">iPad</a>
+    <a class="ph2 gray hover-bg-light-blue" href="/art/paintings">paintings</a>
+    <a class="ph2 gray hover-bg-light-blue" href="/art/about">about</a>
+    <a class="ph2 gray hover-bg-light-blue" href="/contact">contact</a>
+  </div>
+  <div class="justify-center flex mt4">
+    <a class="ph4 gray button" href="/art/buy">buy</a>
+  </div>
+
   <div class="w100">
     {% for list in site.data.images %}
       {% for image in list[1] %}
@@ -16,17 +28,5 @@ title: Sarah Ransohoff
         {% endif %}
       {% endfor %}
     {% endfor %}
-  </div>
-
-  <div class="justify-center flex flex-wrap mt6">
-    <a class="ph2 gray hover-bg-light-blue" href="/art/cartoons">The New Yorker &amp; cartoons</a>
-    <a class="ph2 gray hover-bg-light-blue" href="/art/sketchbook">sketchbook</a>
-    <a class="ph2 gray hover-bg-light-blue" href="/art/ipad">iPad</a>
-    <a class="ph2 gray hover-bg-light-blue" href="/art/paintings">paintings</a>
-    <a class="ph2 gray hover-bg-light-blue" href="/art/about">about</a>
-    <a class="ph2 gray hover-bg-light-blue" href="/contact">contact</a>
-  </div>
-  <div class="justify-center flex mt4">
-    <a class="ph4 gray button" href="/art/buy">buy</a>
   </div>
 </div>
