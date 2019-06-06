@@ -1,3 +1,7 @@
+a:visited {
+  color: inherit;
+}
+
 code {
   overflow: scroll;
   font-size: 1.25rem;
