@@ -7,6 +7,16 @@ code {
   background-size: contain;
 }
 
+header div, header div div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+header a:nth-of-type(2) {
+  margin-left: 20px;
+}
+
 /* Mobile first queries */
 
 /* Larger than mobile */
