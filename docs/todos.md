@@ -1,7 +1,8 @@
 ## todos 06/03/19
-- [ ] make homepage look like jun's, each image is a link and a 'subject'
 - [ ] upload comics
-- [ ] use https://www.netlify.com/, built in way with jekyll?
+- [ ] upload sketches
+- [ ] make homepage look like jun's, each image is a link and a 'subject'
+- [ ] use netlify form for inquiries
 
 ## todos 02/23/18
 - inspo: http://grantshaffer.com/ http://evan.siegel.hiphop/
