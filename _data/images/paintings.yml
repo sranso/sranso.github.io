@@ -1,3 +1,12 @@
+- src: /img/paintings/2020-08-01-succulent.jpg
+  alt: California succulent, acrylic
+- src: /img/paintings/2020-07-18-purples.jpg
+  alt: California purple sage, acrylic
+  featured: true
+- src: /img/paintings/2020-07-17-hollyhocks.jpg
+  alt: California hollyhocks, acrylic
+- src: /img/paintings/2020-07-16-peonies.jpg
+  alt: California peonies, acrylic
 - src: /img/paintings/2020-6-29-field-final-cropped.jpg
   alt: North Carolina field, watercolor
 - src: /img/paintings/2020-5-jlo.jpg
@@ -14,16 +23,10 @@
   alt: Children's book, watercolor
 - src: /img/paintings/lucy-asks-the-waves-to-play-2017.jpg
   alt: Children's book, watercolor
-- src: /img/paintings/canada-windows-sketch-2017.jpg
-  alt: Canada, watercolor
 - src: /img/paintings/canada-sketch-2017.jpg
   alt: Canada, watercolor
 - src: /img/paintings/galway-bar-watercolor-2017.JPG
   alt: Galway, watercolor
-- src: /img/paintings/cliffs-of-moher-2017.jpg
-  alt: Ireland, watercolor
-- src: /img/paintings/ireland-landscape-2017.jpg
-  alt: Ireland, watercolor
 - src: /img/paintings/canada-hilton-sketch-2017.jpg
   alt: Canada, watercolor
 - src: /img/paintings/canada-rocks-and-water-sketch-2017.jpg
@@ -32,21 +35,7 @@
   alt: Curtains, link
 - src: /img/paintings/peonies-sketch-2017.JPG
   alt: Peonies, watercolor
-- src: /img/paintings/outside-ailwee-caves-ireland.JPG
-  alt: Ireland, watercolor
-- src: /img/paintings/apartment-sofa-ireland.JPG
-  alt: Ireland, watercolor
-- src: /img/paintings/galway-bar.JPG
-  alt: Galway, watercolor
 - src: /img/paintings/2019-cactus.jpg
   alt: Cactus on table, ink
 - src: /img/paintings/martin-avery-bedroom-2018.jpg
   alt: Acrylic painting of bedroom
-- src: /img/paintings/bariloche-argentina-2012.jpg
-  alt: Bariloche, watercolor
-- src: /img/paintings/velazquez.JPG
-  alt: Velazquez, oil
-- src: /img/paintings/sean.jpg
-  alt: Portrait, oil
-- src: /img/paintings/books-oil.jpg
-  alt: Books, oil
