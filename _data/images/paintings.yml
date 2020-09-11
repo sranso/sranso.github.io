@@ -1,5 +1,6 @@
 - src: /img/paintings/2020-9-5-casita.jpg
   alt: Casita painting, acrylic
+  featured: true
 - src: /img/paintings/2020-9-5-i-came-from-you.jpg
   alt: Tree and landscape, acrylic
 - src: /img/paintings/2020-8-31-pregnant-cow.jpg
@@ -22,7 +23,6 @@
   alt: California succulent, acrylic
 - src: /img/paintings/2020-07-18-purples.jpg
   alt: California purple sage, acrylic
-  featured: true
 - src: /img/paintings/2020-07-17-hollyhocks.jpg
   alt: California hollyhocks, acrylic
 - src: /img/paintings/2020-07-16-peonies.jpg
