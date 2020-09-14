@@ -11,7 +11,7 @@ description: The New Yorker cartoons and other drawings by Sarah Ransohoff.
     {% for image in site.data.images.cartoons %}
       {% if image.href != null %}
         <div class="w-100 w-40-ns mb4">
-          <p class="mb0 tc gray">Click image to see <i>The New Yorker</i> article.</p>
+          <p class="mb0 tc gray">Click image to see <i>The New Yorker</i> piece.</p>
           <a
             class="pointer dim link mb4 _new-yorker"
             href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/>
