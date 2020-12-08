@@ -1,3 +1,5 @@
+- src: /img/paintings/2020-10-9-city-scape.jpg
+  alt: Brooklyn cityscape, acrylic
 - src: /img/paintings/2020-9-5-casita.jpg
   alt: Casita painting, acrylic
   featured: true
@@ -37,6 +39,10 @@
   alt: Toby the dog, acrylic
 - src: /img/paintings/2020-6-29-rosemary-field.jpg
   alt: North Carolina field, watercolor
+- src: /img/paintings/2020-brisket.jpg
+  alt: Dog, watercolor
+- src: /img/paintings/2020-angus.jpg
+  alt: Dog, watercolor
 - src: /img/paintings/2020-5-jlo.jpg
   alt: North Carolina home, watercolo
 - src: /img/paintings/2018-09-rainy-fall-day.jpg
