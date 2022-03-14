@@ -15,4 +15,6 @@ Tools I'm using
 
 ## Todos
 
-- [ ] left align options on home page?
+- remove fade on hover
+- add names, dimensions, medium
+- organize by animals, landscapes? marcia's ranch, paros, north carolina? i like that best..
