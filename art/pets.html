@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Clay | Sarah Ransohoff
-description: Clay pieces by Sarah Ransohoff.
+title: Pets | Sarah Ransohoff
+description: Pets pieces by Sarah Ransohoff.
 ---
 
 <div class="mt4">
-  <h2 class="">Clay</h2>
+  <h2 class="">Pets</h2>
 
+  <p>
+    Pet portraits and drawings.
+  </p>
   <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.clay %}
+    {% for image in site.data.images.pets %}
       {% if image.href != null %}
         <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
       {% else %}

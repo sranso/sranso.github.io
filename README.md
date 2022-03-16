@@ -16,5 +16,5 @@ Tools I'm using
 ## Todos
 
 - remove fade on hover
-- add names, dimensions, medium
-- organize by animals, landscapes? marcia's ranch, paros, north carolina? i like that best..
+- add names, dimensions, medium to artwork
+- add coffee drawings

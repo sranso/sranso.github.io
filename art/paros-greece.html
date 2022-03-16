@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Paintings | Sarah Ransohoff
-description: Painting and sketches by Sarah Ransohoff. Watercolor, pencil, ink, acrylic.
+title: Paros, Greece | Sarah Ransohoff
+description: Paros, Greece by Sarah Ransohoff. Watercolor, pencil, ink, acrylic.
 ---
 
 <div class="mt4">
-  <h2 class="">Paintings</h2>
+  <h2 class="">Paros, Greece</h2>
 
+  <p>
+    For three months in 2022, I lived in Paros, Greece doing an artist's residency with <a href="http://www.janepack.net/" target="_blank">Jane Pack</a>.
+  </p>
   <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.paintings %}
+    {% for image in site.data.images.paros-greece %}
       {% if image.href != null %}
         <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
       {% else %}

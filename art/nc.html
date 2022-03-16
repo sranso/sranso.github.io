@@ -1,14 +1,18 @@
 ---
 layout: default
-title: Windows | Sarah Ransohoff
-description: Painting and sketches by Sarah Ransohoff. Watercolor, pencil, ink, acrylic.
+title: NC Artwork | Sarah Ransohoff
+description: NC artwork by Sarah Ransohoff.
 ---
 
 <div class="mt4">
-  <h2 class="">Windows</h2>
+  <h2 class="">NC</h2>
 
+  <p>
+    Drawings and paintings from North Carolina, where I'm from and also quarantined for
+    three months in 2020.
+  </p>
   <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.windows %}
+    {% for image in site.data.images.nc %}
       {% if image.href != null %}
         <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
       {% else %}
