@@ -1,3 +1,14 @@
+- src: /img/paros-greece/2022-4-flower-series-4.jpg
+  alt: Rose series, print 4/9
+- src: /img/paros-greece/2022-4-flower-series-8.jpg
+  alt: Rose series, print 8/9
+  featured: true
+- src: /img/paros-greece/2022-4-first-flower.jpg
+  alt: Rose print
+- src: /img/paros-greece/2022-4-cezanne-still.jpg
+  alt: Still life
+- src: /img/paros-greece/2022-4-dieb.jpg
+  alt: Still life
 - src: /img/paros-greece/2022-4-bird.jpg
   alt: Still life
 - src: /img/paros-greece/2022-4-4-still.jpg
@@ -6,7 +17,6 @@
   alt: Still life
 - src: /img/paros-greece/2022-3-23-flowers.jpg
   alt: Flowers and shapes
-  featured: true
 - src: /img/paros-greece/2022-3-1-flowers.jpg
   alt: Flowers
 - src: /img/paros-greece/2022-3-self-portrait.jpg

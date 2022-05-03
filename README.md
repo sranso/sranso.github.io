@@ -17,4 +17,6 @@ Tools I'm using
 
 - remove fade on hover
 - add names, dimensions, medium to artwork
-- add coffee drawings
+- add coffee drawings?
+- add quote, to practice is art -- from greet me i bow book
+- move options to left, not bottom of pic
