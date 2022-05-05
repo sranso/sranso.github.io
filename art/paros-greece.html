@@ -13,13 +13,27 @@ description: Paros, Greece by Sarah Ransohoff. Watercolor, pencil, ink, acrylic.
   <div class="flex flex-wrap items-center justify-between">
     {% for image in site.data.images.paros-greece %}
       {% if image.href != null %}
-        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+        <a
+          class="link dt hide-child br2 cover bg-center"
+          href="{{ image.href }}"
+          target="_blank"
+        >
+          <img src="{{ image.src }}" alt="{{ image.alt }}"/>
+          <span class="white dtc v-mid w-100 h-100 child bg-black-40 pa5">
+            Card title
+          </span>
+        </a>
       {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
+        <a
+          class="w-100 w-40-ns link dt hide-child cover bg-center"
+          href="{{ image.src }}"
+          target="_blank"
+          style="background-image: url({{ image.src }})"
+        >
+          <span class="white dtc v-mid w-100 h-100 child bg-black-40 pa5">
+            "{{ image.alt }}"
+          </span>
+        </a>
       {% endif %}
     {% endfor %}
   </div>
