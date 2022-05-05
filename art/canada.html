@@ -1,23 +1,10 @@
 ---
-layout: default
+layout: image_gallery
 title: Canada Artwork | Sarah Ransohoff
 description: Canada artwork by Sarah Ransohoff.
+images_path: canada
 ---
 
 <div class="mt4">
-  <h2 class="">Canada</h2>
-
-  <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.canada %}
-      {% if image.href != null %}
-        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-      {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  <h2>Canada</h2>
 </div>

@@ -1,26 +1,13 @@
 ---
-layout: default
+layout: image_gallery
 title: NYC Artwork | Sarah Ransohoff
 description: NYC artwork by Sarah Ransohoff.
+images_path: nyc
 ---
 
 <div class="mt4">
-  <h2 class="">NYC</h2>
-
+  <h2>NYC</h2>
   <p>
     Drawings and paintings from living in New York.
   </p>
-  <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.nyc %}
-      {% if image.href != null %}
-        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-      {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
 </div>

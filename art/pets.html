@@ -1,26 +1,10 @@
 ---
-layout: default
+layout: image_gallery
 title: Pets | Sarah Ransohoff
 description: Pets pieces by Sarah Ransohoff.
+images_path: pets
 ---
 
 <div class="mt4">
-  <h2 class="">Pets</h2>
-
-  <p>
-    Pet portraits and drawings.
-  </p>
-  <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.pets %}
-      {% if image.href != null %}
-        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-      {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  <h2>Pets</h2>
 </div>

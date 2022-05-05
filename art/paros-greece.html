@@ -1,31 +1,13 @@
 ---
-layout: default
+layout: image_gallery
 title: Paros, Greece | Sarah Ransohoff
 description: Paros, Greece by Sarah Ransohoff. Watercolor, pencil, ink, acrylic.
+images_path: paros-greece
 ---
 
 <div class="mt4">
-  <h2 class="">Paros, Greece</h2>
-
+  <h2>Paros, Greece</h2>
   <p>
     For three months in 2022 (February through April) I lived in Paros, Greece doing an artist's residency with <a href="http://www.janepack.net/" target="_blank">Jane Pack</a>.
   </p>
-  <div class="mw9 center ph3-ns">
-    <div class="cf ph2-ns">
-    {% for image in site.data.images.paros-greece %}
-    <div class="fl w-100 w-50-ns pa2 flex justify-center">
-      <a
-        class="vh-50 w-100 pa2 link hide-child contain bg-center"
-        href="{{ image.src }}"
-        target="_blank"
-        style="background-image: url({{ image.src }})"
-      >
-        <span class="white dtc v-mid w-100 h-100 child bg-black-40 pa5">
-          "{{ image.alt }}"
-        </span>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</div>
 </div>

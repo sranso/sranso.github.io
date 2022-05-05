@@ -1,27 +1,14 @@
 ---
-layout: default
+layout: image_gallery
 title: Marcia's Ranch | Sarah Ransohoff
 description: Artwork from Marcia's Ranch by Sarah Ransohoff.
+images_path: marcias-ranch
 ---
 
 <div class="mt4">
-  <h2 class="">Marcia's Ranch</h2>
-
+  <h2>Marcia's Ranch</h2>
   <p>
     For two months in 2020, I lived with <a href="https://www.marciaburtt.com/art" target="_blank">Marcia Burtt</a> on her ranch in CA.
     I worked remotely during the day, and painted with her in the evenings and weekends.
   </p>
-  <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.marcias-ranch %}
-      {% if image.href != null %}
-        <a class="w-100 w-40-ns pointer dim link mb4" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-      {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
 </div>

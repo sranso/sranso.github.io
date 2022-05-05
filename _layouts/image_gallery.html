@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div id="content">
+  {{ content }}
+
+  <div class="mw9 center ph3-ns">
+      <div class="cf ph2-ns">
+      {% for image in site.data.images[page.images_path] %}
+          <div class="fl w-100 w-50-ns pa2 mt3">
+          <a
+            {% if image.href != null %}
+                href="{{ image.href }}"
+            {% else %}
+                href="{{ image.src }}"
+            {% endif %}
+            style="background-image: url({{ image.src }})"
+            class="link dt hide-child br2 contain bg-center vh-50 w-100"
+            target="_blank"
+          >
+              <span class="white dtc v-mid w-100 h-100 child bg-black-40 pa5 tc">
+              {{ image.alt }}
+              </span>
+          </a>
+          </div>
+      {% endfor %}
+      </div>
+  </div>
+</div>
+

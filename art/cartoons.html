@@ -1,29 +1,10 @@
 ---
-layout: default
+layout: image_gallery
 title: Cartoons | Sarah Ransohoff
 description: The New Yorker cartoons and other drawings by Sarah Ransohoff.
+images_path: cartoons
 ---
 
 <div class="mt4">
-  <h2 class="">Cartoons</h2>
-
-  <div class="flex flex-wrap items-center justify-between">
-    {% for image in site.data.images.cartoons %}
-      {% if image.href != null %}
-        <div class="w-100 w-40-ns mb4">
-          <p class="mb0 tc gray">Click image to see <i>The New Yorker</i> piece.</p>
-          <a
-            class="pointer dim link mb4 _new-yorker"
-            href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/>
-          </a>
-        </div>
-      {% else %}
-        <div class="w-100 w-40-ns pointer dim link mb4">
-          <a href="{{ image.src }}" target="_blank">
-            <img src="{{ image.src }}" alt="{{ image.alt }}">
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  <h2>Cartoons</h2>
 </div>
