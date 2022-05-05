@@ -19,7 +19,10 @@ layout: default
             target="_blank"
           >
               <span class="white dtc v-mid w-100 h-100 child bg-black-40 pa5 tc">
-              {{ image.alt }}
+               {% assign description = image.alt | split: "\n" %}
+                {% for line in description %}
+                    <span class="db">{{ line }}</span>
+                {% endfor %}
               </span>
           </a>
           </div>
