@@ -15,6 +15,5 @@ Tools I'm using
 
 ## Todos
 
-- add coffee drawings?
-- add quote, to practice is art -- from greet me i bow book
 - move options to left, not bottom of pic
+- add/update cv
