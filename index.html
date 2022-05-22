@@ -17,7 +17,7 @@ title: Sarah Ransohoff
       {% for image in list[1] %}
         {% if image.featured != null %}
           {% if image.href != null %}
-            <a class="pointer" href="{{ image.href }}" target="_blank"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+            <a class="pointer" href="{{ image.href }}"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
           {% else %}
             <img src="{{ image.src }}" alt="{{ image.alt }}" />
           {% endif %}
