@@ -16,5 +16,3 @@ Tools I'm using
 ## Todos
 
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
-- move options to left, not bottom of pic
-- add/update cv

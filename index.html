@@ -12,29 +12,40 @@ title: Sarah Ransohoff
       Norman Fischer
     </a>
   </p>
-  <div class="w100">
-    {% for list in site.data.images %}
-      {% for image in list[1] %}
-        {% if image.featured != null %}
-          {% if image.href != null %}
-            <a class="pointer" href="{{ image.href }}"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-          {% else %}
-            <img src="{{ image.src }}" alt="{{ image.alt }}" />
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </div>
+  <div class="mw9 center ph3-ns">
+    <div class="cf ph2-ns">
+      <div class="fl w-100 w-20-ns pt5 justify-left flex-column flex flex-wrap times">
+        <p class="pt4 mb2 b">ART</p>
+        <a class="ph2 gray" href="/art/paros-greece">Greece</a>
+        <a class="ph2 gray" href="/art/coffee-drawings">Coffee drawings</a>
+        <a class="ph2 gray" href="/art/marcias-ranch">Marcia's ranch</a>
+        <a class="ph2 gray" href="/art/nyc">NYC</a>
+        <a class="ph2 gray" href="/art/nc">NC</a>
+        <a class="ph2 gray" href="/art/canada">Canada</a>
+        <a class="ph2 gray" href="/art/pets">Pets</a>
 
-  <div class="justify-center flex flex-wrap mt4 mb4 times">
-    <a class="ph2 gray" href="/art/paros-greece">Greece</a>
-    <a class="ph2 gray" href="/art/coffee-drawings">Coffee drawings</a>
-    <a class="ph2 gray" href="/art/marcias-ranch">Marcia's ranch</a>
-    <a class="ph2 gray" href="/art/nyc">NYC</a>
-    <a class="ph2 gray" href="/art/nc">NC</a>
-    <a class="ph2 gray" href="/art/canada">Canada</a>
-    <a class="ph2 gray" href="/art/pets">Pets</a>
-    <a class="ph2 gray" href="/art/cartoons">The New Yorker &amp; toons</a>
-    <a class="ph2 gray" href="/art/about">About</a>
+        <p class="pt4 mb2 b">SILLY</p>
+        <a class="ph2 gray" href="/art/cartoons">The New Yorker &amp; toons</a>
+        <a class="ph2 gray" href="https://prettygoodtherapy.com/" target="_blank">Pretty Good Therapy</a>
+        <a class="ph2 gray" href="https://scone-heads.com/" target="_blank">Scone Heads</a>
+
+        <p class="pt4 mb2 b">CONTACT</p>
+        <a class="ph2 gray" href="/art/about">CV & contact</a>
+      </div>
+      <div class="fl w-100 w-80-ns pa2">
+        {% for list in site.data.images %}
+          {% for image in list[1] %}
+            {% if image.featured != null %}
+              {% if image.href != null %}
+                <a class="pointer" href="{{ image.href }}"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
+              {% else %}
+                <img src="{{ image.src }}" alt="{{ image.alt }}" />
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+
   </div>
+</div>
 </main>
