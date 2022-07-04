@@ -1,32 +1,32 @@
 - src: /img/pets/2022-5-Dean.jpg
-  alt: Dean, 2022\n
-    iPad
+  title: Dean, 2022
+  medium: iPad
 - src: /img/pets/2021-12-6-jerry.png
-  alt: Jerry, 2021\n
-    iPad
+  title: Jerry, 2021
+  medium: iPad
 - src: /img/pets/2020-brisket.jpg
-  alt: Brisket, 2020\n
-    watercolor on paper\n
-    10x14"
+  title: Brisket, 2020
+  medium: watercolor on paper
+  dimensions: 10x14"
 - src: /img/pets/2020-angus.jpg
-  alt: Angus, 2020\n
-    watercolor on paper\n
-    10x14"
+  title: Angus, 2020
+  medium: watercolor on paper
+  dimensions: 10x14"
 - src: /img/nyc/2021-12-24-xena.jpeg
-  alt: Xena, 2021\n
-    iPad
+  title: Xena, 2021
+  medium: iPad
 - src: /img/nyc/2021-12-25.png
-  alt: Miso, 2021\n
-    iPad
+  title: Miso, 2021
+  medium: iPad
 - src: /img/marcias-ranch/2020-9-5-eartha.jpg
-  alt: Eartha, 2020\n
-    acrylic on board\n
-    4x3"
+  title: Eartha, 2020
+  medium: acrylic on board
+  dimensions: 4x3"
 - src: /img/marcias-ranch/2020-9-5-toby.jpg
-  alt: Toby, 2020\n
-    acrlyic on board\n
-    4x4"
+  title: Toby, 2020
+  medium: acrlyic on board
+  dimensions: 4x4"
 - src: /img/pets/2019-Gus.jpg
-  alt: Gus, 2019\n
-    watercolor on paper\n
-    10x14"
+  title: Gus, 2019
+  medium: watercolor on paper
+  dimensions: 10x14"

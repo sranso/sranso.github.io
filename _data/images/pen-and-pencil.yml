@@ -1,34 +1,34 @@
 - src: /img/paros-greece/2022-3-self-portrait.jpg
-  alt: Self portrait, 2022\n
-    graphite and gouache on gray paper\n
-    14.5x20"
+  title: Self portrait, 2022
+  medium: graphite and gouache on gray paper
+  dimensions: 14.5x20"
 - src: /img/paros-greece/2022-3-27-bread.jpg
-  alt: Bread, 2022\n
-    graphite and gouache on gray paper\n
-    15.25x11.75"\n
-    $375 framed
+  title: Bread, 2022
+  medium: graphite and gouache on gray paper
+  dimensions: 15.25x11.75"
+  status: $375 framed
 - src: /img/nyc/2021-09-26-roof-plants.jpg
-  alt: Rooftop plants, 2021\n
-    graphite on paper\n
-    17x14"\n
-    $500 framed
+  title: Rooftop plants, 2021
+  medium: graphite on paper
+  dimensions: 17x14"
+  status: $500 framed
 - src: /img/nc/2020-5-basket.jpg
-  alt: Basket study, 2020\n
-    graphite on paper
+  title: Basket study, 2020
+  medium: graphite on paper
 - src: /img/nyc/2018-09-rainy-fall-day.jpg
-  alt: Brooklyn in the rain\n
-    ink on paper\n
-    7x5"
+  title: Brooklyn in the rain
+  medium: ink on paper
+  dimensions: 7x5"
 - src: /img/nyc/2019-brunetti-sketch.jpg
-  alt: Greenpoint\n
-    pen on paper\n
-    8x10"
+  title: Greenpoint
+  medium: pen on paper
+  dimensions: 8x10"
 - src: /img/nyc/2019-man-train.jpg
-  alt: Man on a train\n
-    ink
+  title: Man on a train
+  medium: ink
 - src: /img/nyc/2019-train-2.jpg
-  alt: Train\n
-    ink
+  title: Train
+  medium: ink
 - src: /img/nyc/2019-train.jpg
-  alt: Train\n
-    ink
+  title: Train
+  medium: ink
