@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+<script>
+  const toggleGallery = (e, image) => {
+    console.log('w')
+    e.preventDefault();
+    console.log(image);
+  }
+</script>
 <div id="content">
   {{ content }}
 
@@ -12,7 +19,7 @@ layout: default
             {% if image.href != null %}
                 href="{{ image.href }}"
             {% else %}
-                href="{{ image.src }}"
+                onclick="(e) => toggleGallery(e, image)"
             {% endif %}
             style="background-image: url({{ image.src }})"
             class="link dt hide-child br2 contain bg-center vh-50 w-100"
