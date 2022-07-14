@@ -5,6 +5,7 @@ title: Artwork
 
 {% assign art_by_path = site.artwork | sort: "path" | reverse %}
 {% assign watercolors = art_by_path | where: "tags", "watercolor" %}
+{% assign ipad = art_by_path | where: "tags", "ipad" %}
 
 <div class="mt4">
   <h2 class="ttu">Artwork</h2>
