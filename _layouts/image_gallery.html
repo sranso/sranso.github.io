@@ -1,32 +1,29 @@
 ---
 layout: default
 ---
-<script>
-  const toggleGallery = (e, image) => {
-    console.log('w')
-    e.preventDefault();
-    console.log(image);
-  }
-</script>
 <div id="content">
   {{ content }}
 
   <div class="mw9 center ph3-ns">
       <div class="cf ph2-ns">
-      {% for image in site.data.images[page.images_path] %}
+        {% assign category = site.artwork | where_exp: "item", "item.path contains page.category_path" %}
+        {% assign sorted = category | sort: "path" | reverse %}
+        {% for artwork in sorted %}
           <div class="fl w-100 w-50-ns pa2 mt3">
           <a
             {% if image.href != null %}
-                href="{{ image.href }}"
+              href="{{ artwork.href }}"
+            {% else %}
+              href="{{ artwork.url }}"
             {% endif %}
-            style="background-image: url({{ image.src }})"
+            style="background-image: url({{ artwork.src }})"
             class="link dt hide-child br2 contain bg-center vh-50 w-100"
           >
               <span class="black dtc v-mid w-100 h-100 child bg-white-70 pa5 tl">
-                <span class="db">{{ image.title }}</span>
-                <span class="db">{{ image.medium }}</span>
-                <span class="db">{{ image.dimensions }}</span>
-                <span class="db">{{ image.status }}</span>
+                <span class="db">{{ artwork.title }}</span>
+                <span class="db">{{ artwork.medium }}</span>
+                <span class="db">{{ artwork.dimensions }}</span>
+                <span class="db">{{ artwork.status }}</span>
               </span>
           </a>
           </div>
