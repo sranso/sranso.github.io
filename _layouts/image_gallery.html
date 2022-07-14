@@ -18,8 +18,6 @@ layout: default
           <a
             {% if image.href != null %}
                 href="{{ image.href }}"
-            {% else %}
-                onclick="(e) => toggleGallery(e, image)"
             {% endif %}
             style="background-image: url({{ image.src }})"
             class="link dt hide-child br2 contain bg-center vh-50 w-100"

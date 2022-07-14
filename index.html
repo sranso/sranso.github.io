@@ -33,17 +33,14 @@ title: Sarah Ransohoff
         <a class="ph2 gray" href="/art/about">CV & contact</a>
       </div>
       <div class="fl w-100 w-80-ns pa2">
-        {% for list in site.data.images %}
-          {% for image in list[1] %}
-            {% if image.featured != null %}
-              {% if image.href != null %}
-                <a class="pointer" href="{{ image.href }}"><img src="{{ image.src }}" alt="{{ image.alt }}"/></a>
-              {% else %}
-                <img src="{{ image.src }}" alt="{{ image.alt }}" />
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
+        {% assign featured_list = site.artwork | where: "featured", "true"  %}
+        {% assign featured = featured_list.first %}
+        <!-- no clue why I can't get `| find: "featured", "true"` to work -->
+        <a
+          href="{{ featured.url }}"
+          style="background-image: url({{ featured.src }})"
+          class="link dt hide-child br2 contain bg-center vh-50 w-100">
+        </a>
       </div>
 
   </div>
