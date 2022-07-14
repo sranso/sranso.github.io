@@ -8,10 +8,18 @@ layout: default
         <span class="i">{{ page.title }}</span><br/>
         <span>{{ page.medium }}</span>
         {% if page.dimensions %}
-            <span>| {{ page.dimensions }}</span>
+            <span>, {{ page.dimensions }}</span>
         {% endif %}
         {% if page.status %}
-            <span>| {{ page.status }}</span>
+            <span>, {{ page.status }}</span>
+        {% endif %}
+        {% if page.status contains "$" %}
+            <br/><span>
+                <a
+                    target="_blank"
+                    href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
+                    Email to purchase</a>. I accept Venmo, PayPal, Zelle, and Square.
+            </span>
         {% endif %}
     </p>
 </div>
