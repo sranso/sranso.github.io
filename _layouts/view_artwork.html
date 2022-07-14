@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="mw9 center ph3-ns">
+    <img class="db mla mra" src="{{ page.src }}"/>
+    <p class="tc">
+        <span class="i">{{ page.title }}</span><br/>
+        <span>{{ page.medium }}</span>
+        {% if page.dimensions %}
+            <span>| {{ page.dimensions }}</span>
+        {% endif %}
+        {% if page.status %}
+            <span>| {{ page.status }}</span>
+        {% endif %}
+    </p>
+</div>
