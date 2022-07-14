@@ -11,7 +11,7 @@ layout: default
         {% for artwork in sorted %}
           <div class="fl w-100 w-50-ns pa2 mt3">
           <a
-            {% if image.href != null %}
+            {% if artwork.href != null %}
               href="{{ artwork.href }}"
             {% else %}
               href="{{ artwork.url }}"
