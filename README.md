@@ -15,4 +15,5 @@ Tools I'm using
 
 ## Todos
 
+- double check titles etc
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
