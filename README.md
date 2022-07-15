@@ -17,3 +17,5 @@ Tools I'm using
 
 - double check titles etc
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
+- https://cargo.site/Templates maybe one day?
+- update tags, add filtering option?

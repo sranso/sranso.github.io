@@ -25,14 +25,14 @@ title: Sarah Ransohoff
         <p class="pt4 mb2 b">CONTACT</p>
         <a class="ph2 gray" href="/art/about">CV & contact</a>
       </div>
-      <div class="mt5 fl w-100 w-80-ns pa2">
+      <div class="mt3 fl w-100 w-80-ns pa2">
         {% assign featured_list = site.artwork | where: "featured", "true"  %}
         {% assign featured = featured_list.first %}
         <!-- no clue why I can't get `| find: "featured", "true"` to work -->
         <a
           href="{{ featured.url }}"
           style="background-image: url({{ featured.src }})"
-          class="link dt hide-child br2 contain bg-center vh-50 w-100">
+          class="link dt hide-child br2 contain bg-center vh-75 w-100">
         </a>
       </div>
 
