@@ -8,26 +8,26 @@ layout: default
       <div class="cf ph2-ns">
         {% assign category = site.artwork | where_exp: "item", "item.path contains page.category_path" %}
         {% assign sorted = category | sort: "path" | reverse %}
-        {% for artwork in sorted %}
+        {% for art in sorted %}
           <div class="fl w-100 w-50-ns pa2 mt3">
-          <a
-            {% if artwork.href != null %}
-              href="{{ artwork.href }}"
-            {% else %}
-              href="{{ artwork.url }}"
-            {% endif %}
-            style="background-image: url({{ artwork.src }})"
-            class="link dt hide-child br2 contain bg-center vh-50 w-100"
-          >
-              <span class="black dtc v-mid w-100 h-100 child bg-white-70 pa5 tl">
-                <span class="db">{{ artwork.title }}</span>
-                <span class="db">{{ artwork.medium }}</span>
-                <span class="db">{{ artwork.dimensions }}</span>
-                <span class="db">{{ artwork.status }}</span>
-              </span>
-          </a>
+            <a
+              {% if art.href != null %}
+                href="{{ art.href }}"
+              {% else %}
+                href="{{ art.url }}"
+              {% endif %}
+              style="background-image: url({{ art.src }})"
+              class="link dt hide-child br2 contain bg-center vh-50 w-100"
+            >
+                <span class="black dtc v-mid w-100 h-100 child bg-white-70 pa5 tl">
+                  <span class="db">{{ art.title }}</span>
+                  <span class="db">{{ art.medium }}</span>
+                  <span class="db">{{ art.dimensions }}</span>
+                  <span class="db">{{ art.status }}</span>
+                </span>
+            </a>
           </div>
-      {% endfor %}
+        {% endfor %}
       </div>
   </div>
 </div>

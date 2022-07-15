@@ -6,13 +6,7 @@ layout: default
     <img class="db mla mra" src="{{ page.src }}"/>
     <p class="tc">
         <span class="i">{{ page.title }}</span><br/>
-        <span>{{ page.medium }}</span>
-        {% if page.dimensions %}
-            <span>, {{ page.dimensions }}</span>
-        {% endif %}
-        {% if page.status %}
-            <span>, {{ page.status }}</span>
-        {% endif %}
+        <span>{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
         {% if page.status contains "$" %}
             <br/><span>
                 <a

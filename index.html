@@ -4,14 +4,6 @@ title: Sarah Ransohoff
 ---
 
 <main>
-  <p class="tc times i">"Practice and enlightenment are one phenomenon." &mdash;
-    <a
-      class="ph2 black"
-      href="https://www.goodreads.com/book/show/57575713-when-you-greet-me-i-bow"
-      target="_blank">
-      Norman Fischer
-    </a>
-  </p>
   <div class="mw9 center ph3-ns">
     <div class="cf ph2-ns">
       <div class="fl w-100 w-20-ns pt5 justify-left flex-column flex flex-wrap times">
@@ -23,6 +15,7 @@ title: Sarah Ransohoff
         <a class="ph2 gray" href="/art/ipad">iPad</a>
         <a class="ph2 gray" href="/art/the-ninth-rose">The Ninth Rose</a>
         <a class="ph2 gray" href="/art/pets">Pets</a>
+        <a class="ph2 gray i" href="/art/shop">Shop</a>
 
         <p class="pt4 mb2 b">SILLY</p>
         <a class="ph2 gray" href="/art/cartoons">The New Yorker &amp; toons</a>
@@ -32,7 +25,7 @@ title: Sarah Ransohoff
         <p class="pt4 mb2 b">CONTACT</p>
         <a class="ph2 gray" href="/art/about">CV & contact</a>
       </div>
-      <div class="fl w-100 w-80-ns pa2">
+      <div class="mt5 fl w-100 w-80-ns pa2">
         {% assign featured_list = site.artwork | where: "featured", "true"  %}
         {% assign featured = featured_list.first %}
         <!-- no clue why I can't get `| find: "featured", "true"` to work -->
