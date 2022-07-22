@@ -9,10 +9,10 @@ layout: default
         <span>{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
         {% if page.status contains "$" %}
             <br/><span>
-                <a
+                Email me at <a
                     target="_blank"
                     href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
-                    Email to purchase</a>. I accept Venmo, PayPal, Zelle, and Square.
+                    sranso@gmail.com</a> to purchase. I accept Venmo, PayPal, Zelle, and Square.
             </span>
         {% endif %}
     </p>

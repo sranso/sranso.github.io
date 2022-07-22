@@ -15,7 +15,6 @@ Tools I'm using
 
 ## Todos
 
-- double check titles etc
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
 - https://cargo.site/Templates maybe one day?
-- update tags, add filtering option?
+- [much later] update tags, add filtering option?
