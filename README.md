@@ -15,6 +15,7 @@ Tools I'm using
 
 ## Todos
 
+- add 'description' to artwork, and story for the ones on sale?
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
 - https://cargo.site/Templates maybe one day?
 - [much later] update tags, add filtering option?
