@@ -6,15 +6,15 @@ How to run
 $ bundle exec jekyll serve
 ```
 
-Tools I'm using
-
 - http://tachyons.io/
-- omg how does handlebars compilation work
 
 # Personal stuff
 
 ## Todos
 
+- mobile friendly
+- breadcrumbs?
+- use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
 - https://cargo.site/Templates maybe one day?

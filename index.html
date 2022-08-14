@@ -3,39 +3,34 @@ layout: default
 title: Sarah Ransohoff
 ---
 
-<main>
-  <div class="mw9 center ph3-ns">
-    <div class="cf ph2-ns">
-      <div class="fl w-100 w-20-ns pt5 justify-left flex-column flex flex-wrap times">
-        <p class="pt4 mb2 b">ART</p>
-        <a class="ph2 gray" href="/art/watercolor">Watercolor</a>
-        <a class="ph2 gray" href="/art/oil-and-acrylic">Oil and acrylic</a>
-        <a class="ph2 gray" href="/art/pen-and-pencil">Pen and pencil</a>
-        <a class="ph2 gray" href="/art/coffee-drawings">Coffee drawings</a>
-        <a class="ph2 gray" href="/art/ipad">iPad</a>
-        <a class="ph2 gray" href="/art/the-ninth-rose">The Ninth Rose</a>
-        <a class="ph2 gray" href="/art/pets">Pets</a>
-        <a class="ph2 gray i" href="/art/shop">Shop</a>
+<div class="mw9 center ph3-ns cf df">
+    <div class="fl w-100 w-20-ns pt5 justify-left flex flex-wrap flex-column times">
+      <p class="pt4 mb2 b">ART</p>
+      <a class="ph2 gray" href="/art/watercolor">Watercolor</a>
+      <a class="ph2 gray" href="/art/oil-and-acrylic">Oil and acrylic</a>
+      <a class="ph2 gray" href="/art/pen-and-pencil">Pen and pencil</a>
+      <a class="ph2 gray" href="/art/coffee-drawings">Coffee drawings</a>
+      <a class="ph2 gray" href="/art/ipad">iPad</a>
+      <a class="ph2 gray" href="/art/the-ninth-rose">The Ninth Rose</a>
+      <a class="ph2 gray" href="/art/pets">Pets</a>
+      <a class="ph2 gray i" href="/art/shop">Shop</a>
 
-        <p class="pt4 mb2 b">SILLY</p>
-        <a class="ph2 gray" href="/art/cartoons">The New Yorker &amp; toons</a>
-        <a class="ph2 gray" href="https://prettygoodtherapy.com/" target="_blank">Pretty Good Therapy</a>
-        <a class="ph2 gray" href="https://scone-heads.com/" target="_blank">Scone Heads</a>
+      <p class="pt4 mb2 b">SILLY</p>
+      <a class="ph2 gray" href="/art/cartoons">The New Yorker &amp; toons</a>
+      <a class="ph2 gray" href="https://prettygoodtherapy.com/" target="_blank">Pretty Good Therapy</a>
+      <a class="ph2 gray" href="https://scone-heads.com/" target="_blank">Scone Heads</a>
 
-        <p class="pt4 mb2 b">CONTACT</p>
-        <a class="ph2 gray" href="/art/about">CV & contact</a>
-      </div>
-      <div class="mt3 fl w-100 w-80-ns pa2">
-        {% assign featured_list = site.artwork | where: "featured", "true"  %}
-        {% assign featured = featured_list.first %}
-        <!-- no clue why I can't get `| find: "featured", "true"` to work -->
-        <a
-          href="{{ featured.url }}"
-          style="background-image: url({{ featured.src }})"
-          class="link dt hide-child br2 contain bg-center vh-75 w-100">
-        </a>
-      </div>
-
-  </div>
+      <p class="pt4 mb2 b">CONTACT</p>
+      <a class="ph2 gray" href="/art/about">CV & contact</a>
+    </div>
+    <div class="mt3 fl w-100 w-80-ns pa2">
+      {% assign featured_list = site.artwork | where: "featured", "true"  %}
+      {% assign featured = featured_list.first %}
+      <!-- no clue why I can't get `| find: "featured", "true"` to work -->
+      <a
+        href="{{ featured.url }}"
+        style="background-image: url({{ featured.src }})"
+        class="link dt hide-child br2 contain bg-center vh-75 w-100">
+      </a>
+    </div>
 </div>
-</main>
