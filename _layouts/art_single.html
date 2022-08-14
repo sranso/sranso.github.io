@@ -5,15 +5,16 @@ layout: default
 <div class="mw9 center ph3-ns">
     <img class="db mla mra" src="{{ page.src }}"/>
     <p class="tc">
-        <span class="i">{{ page.title }}</span><br/>
-        <span>{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
-        {% if page.status contains "$" %}
-            <br/><span>
-                Email me at <a
-                    target="_blank"
-                    href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
-                    sranso@gmail.com</a> to purchase. I accept Venmo, PayPal, Zelle, and Square.
-            </span>
-        {% endif %}
+        <span class="i f2 lh-copy">{{ page.title }}</span><br/>
+        <span class="mb2">{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
     </p>
+    {% if page.status contains "$" %}
+        <p class="tc">
+            Email me at <a
+                target="_blank"
+                href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
+                sranso@gmail.com</a> to purchase. I accept Venmo, PayPal, Zelle, and Square.
+        </p>
+    {% endif %}
+
 </div>
