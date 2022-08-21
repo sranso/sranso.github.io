@@ -12,8 +12,9 @@ $ bundle exec jekyll serve
 
 ## Todos
 
+- breadcrumbs
+- metadata to art single
 - mobile friendly
-- breadcrumbs?
 - use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
