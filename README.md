@@ -12,7 +12,6 @@ $ bundle exec jekyll serve
 
 ## Todos
 
-- breadcrumbs
 - metadata to art single
 - mobile friendly
 - use http://tachyons.io/components/ ?

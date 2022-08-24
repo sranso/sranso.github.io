@@ -1,9 +1,15 @@
 ---
 layout: default
 ---
+<div class="mt5 mb2 mw9 center ph3-ns f4 i">
+    {% assign split_url = page.url | split: "/" %}
+    {% assign category = split_url[2] | split: "-" | join: " " | capitalize %}
+    <a class="black" href="/">Art</a> >
+    <a class="black" href="/art/{{ split_url[2] }}/">{{category}}</a>
+</div>
 
 <div class="mw9 center ph3-ns">
-    <img class="db mla mra mt5 mb3" src="{{ page.src }}"/>
+    <img class="db mla mra mb3" src="{{ page.src }}"/>
     <p class="tc">
         <span class="i f2 lh-copy">{{ page.title }}</span><br/>
         <span class="mb2">{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
@@ -12,6 +18,7 @@ layout: default
         <p class="tc">
             Email me at <a
                 target="_blank"
+                class="black"
                 href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
                 sranso@gmail.com</a> to inquire.
         </p>
