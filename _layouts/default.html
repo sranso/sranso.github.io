@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Page Needs -->
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <meta name="description" content="
-    {%- if page.description -%}
-      {{ page.description }}
-    {%- elsif page.title and page.medium -%}
-      {{ page.title }}, {{ page.medium }}
-    {%- else -%}
-      {{ site.description }}
-    {%- endif -%}">
-  <meta name="author" content="Sarah Ransohoff">
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177913389-1"></script>
   <script>
@@ -24,8 +11,6 @@
     gtag('config', 'UA-177913389-1');
   </script>
 
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS -->
   <link rel="stylesheet" href="/webfonts/ss-social.css">
   <!-- .Skeleton -->
@@ -38,7 +23,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/img/favicon.ico">
 
+  <meta name="author" content="Sarah Ransohoff">
+
+  {% seo %}
 </head>
+
 <body>
   <!-- Primary Page Layout -->
   <header class="mt3 mr3 mb3 ml3 flex justify-between items-start items-baseline-ns">

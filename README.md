@@ -12,7 +12,6 @@ $ bundle exec jekyll serve
 
 ## Todos
 
-- metadata to art single
 - mobile friendly
 - use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
