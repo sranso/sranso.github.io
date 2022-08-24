@@ -9,7 +9,7 @@ layout: default
   <h2 class="ttu">Related Posts</h2>
   <ul class="posts">
     {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" class="link black underline hover-bg-light-blue">
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" class="link underline hover-bg-light-blue">
           {{ post.title }}
         </a>
       </li>

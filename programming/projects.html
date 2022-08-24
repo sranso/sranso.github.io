@@ -8,7 +8,7 @@ title: Projects
   <ul class="posts ml2 list">
     {% for project in site.categories.projects %}
       <li class="mb4 pb3 bb b--light-gray">
-        <a class="link black underline hover-bg-light-blue f2" href="{{ project.url }}">{{ project.title }}</a>
+        <a class="link underline hover-bg-light-blue f2" href="{{ project.url }}">{{ project.title }}</a>
         <br />
         <span class="mr3">{{ project.date | date_to_string }}</span>
         {% for tag in project.tags %}
