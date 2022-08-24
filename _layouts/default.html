@@ -4,7 +4,14 @@
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="
+    {%- if page.description -%}
+      {{ page.description }}
+    {%- elsif page.title and page.medium -%}
+      {{ page.title }}, {{ page.medium }}
+    {%- else -%}
+      {{ site.description }}
+    {%- endif -%}">
   <meta name="author" content="Sarah Ransohoff">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
