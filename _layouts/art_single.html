@@ -12,11 +12,11 @@ layout: default
     <img class="db mla mra mb3" src="{{ page.image }}"/>
     <p class="tc">
         <span class="i f2 lh-copy">{{ page.title }}</span><br/>
-        <span class="mb2">{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}{% if page.status %}, {{ page.status }}{% endif %}</span>
+        <span class="mb2">{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}</span>
     </p>
     {% if page.status contains "$" %}
         <p class="tc">
-            Email me at <a
+            This piece is available. Email me at <a
                 target="_blank"
                 class="black"
                 href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
