@@ -4,7 +4,7 @@ title: Shop Artwork
 ---
 
 {% assign available = site.artwork | where_exp: "item", "item.status contains '$'" %}
-{% assign sorted = available | sort: "path" | reverse %}
+{% assign sorted = available | sort: "date" | reverse %}
 
 <div class="mw9 center ph3-ns">
   <h1 class="f1 lh-title">Available artwork</h1>
