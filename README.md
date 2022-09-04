@@ -12,6 +12,7 @@ $ bundle exec jekyll serve
 
 ## Todos
 
+- sliding scale?
 - mobile friendly
 - use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
