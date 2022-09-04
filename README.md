@@ -13,6 +13,7 @@ $ bundle exec jekyll serve
 ## Todos
 
 - sliding scale?
+- remove spirals on coffee drawings/watercolors
 - mobile friendly
 - use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
