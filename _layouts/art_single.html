@@ -16,7 +16,7 @@ layout: default
     </p>
     {% if page.status contains "$" %}
         <p class="tc">
-            This piece is available. Email me at <a
+            This piece is available for {{ page.status }} plus shipping. Email me at <a
                 target="_blank"
                 class="black"
                 href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
