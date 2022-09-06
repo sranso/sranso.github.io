@@ -12,6 +12,7 @@ $ bundle exec jekyll serve
 
 ## Todos
 
+- change height/width
 - sliding scale?
 - remove spirals on coffee drawings/watercolors
 - mobile friendly
