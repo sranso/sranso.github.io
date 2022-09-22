@@ -14,7 +14,7 @@ $ bundle exec jekyll serve
 
 - add sliding scale?
 - remove spirals on coffee drawings/watercolors
-- make mobile friendly
+- make it more mobile friendly
 - use http://tachyons.io/components/ ?
 - add 'description' to artwork, and story for the ones on sale?
 - remove custom fonts http://tachyons.io/docs/typography/font-family/
