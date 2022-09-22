@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<div class="mt5 mb2 mw9 center ph3-ns f4 i">
+<div class="mt5 mb2 ph3-ns f3 i gray">
     {% assign split_url = page.url | split: "/" %}
     {% assign category = split_url[2] | split: "-" | join: " " | capitalize %}
-    <a class="black" href="/">Art</a> >
-    <a class="black" href="/art/{{ split_url[2] }}/">{{category}}</a>
+    <a href="/">Art</a> >
+    <a href="/art/{{ split_url[2] }}/">{{category}}</a>
 </div>
 
 <div class="mw9 center ph3-ns">
