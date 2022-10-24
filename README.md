@@ -12,6 +12,8 @@ $ bundle exec jekyll serve
 
 ## Todos
 
+- make it load faster!!! image optimization
+- replace ' measurements with "
 - add sliding scale?
 - remove spirals on coffee drawings/watercolors
 - make it more mobile friendly
