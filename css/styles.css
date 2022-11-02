@@ -15,6 +15,10 @@ code {
   font-size: 1.25rem;
 }
 
+h3 {
+  letter-spacing: normal;
+}
+
 .iis-slide {
   background-size: contain;
 }
