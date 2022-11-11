@@ -12,6 +12,7 @@ $ bundle exec jekyll serve
 
 ## Todos
 
+- add descriptions!!!! audio descriptions???
 - fix preview image on shop page
 - make it load faster!!! image optimization
 - replace ' measurements with "
