@@ -6,7 +6,8 @@ How to run
 $ bundle exec jekyll serve
 ```
 
-- http://tachyons.io/
+Deployed with netlify.com
+Styling help from tachyons.io
 
 # Personal stuff
 
