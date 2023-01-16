@@ -23,6 +23,10 @@ h3 {
   background-size: contain;
 }
 
+.highlight {
+  background-color: lavenderblush;
+}
+
 header div, header div div {
   display: flex;
   align-items: baseline;
