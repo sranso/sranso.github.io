@@ -13,10 +13,10 @@ Styling help from tachyons.io
 
 ## Todos
 
+- add illos on eng page, update w helena's suggestions
 - add descriptions!!!! audio descriptions???
 - fix preview image on shop page
 - make it load faster!!! image optimization
-- replace ' measurements with "
 - add sliding scale?
 - remove spirals on coffee drawings/watercolors
 - make it more mobile friendly
