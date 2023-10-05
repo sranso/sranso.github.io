@@ -1,26 +1,34 @@
 ---
 layout: default
 ---
+
 <div class="mt5 mb2 ph3-ns f3 i gray">
-    {% assign split_url = page.url | split: "/" %}
-    {% assign category = split_url[2] | split: "-" | join: " " | capitalize %}
-    <a href="/">Art</a> >
-    <a href="/art/{{ split_url[2] }}/">{{category}}</a>
+  {% assign split_url = page.url | split: "/" %} {% assign category =
+  split_url[2] | split: "-" | join: " " | capitalize %}
+  <a href="/">Art</a> >
+  <a href="/art/{{ split_url[2] }}/">{{category}}</a>
 </div>
 
 <div class="center ph3-ns">
-    <img class="db mla mra mb3" src="{{ page.image }}"/>
-    <p class="tc">
-        <span class="i f2 lh-copy">{{ page.title }}</span><br/>
-        <span class="mb2">{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif %}</span>
-    </p>
-    {% if page.status contains "$" %}
-        <p class="tc">
-            This piece is available. Email me at <a
-                target="_blank"
-                class="black"
-                href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}">
-                sranso@gmail.com</a> to inquire.
-        </p>
-    {% endif %}
+  <img class="db center mb3" src="{{ page.image }}" />
+  <p class="tc">
+    <span class="i f2 lh-copy">{{ page.title }}</span><br />
+    <span class="mb2"
+      >{{ page.medium }}{% if page.dimensions %}, {{ page.dimensions }}{% endif
+      %}</span
+    >
+  </p>
+  {% if page.status contains "$" %}
+  <p class="tc">
+    This piece is available. Email me at
+    <a
+      target="_blank"
+      class="black"
+      href="mailto:sranso@gmail.com?subject={{ page.title }}&body={{ site.url }}{{ page.url }}"
+    >
+      sranso@gmail.com</a
+    >
+    to inquire.
+  </p>
+  {% endif %}
 </div>
